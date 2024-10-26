@@ -10,6 +10,7 @@ on:
         default: '(all)'
         options:
           - '(all)'
+          - Applifting/Humansis
           - cortezaproject/corteza
           - Gnucash/gnucash
           - kalkulacka-one/kalkulacka
@@ -28,6 +29,10 @@ jobs:
     strategy:
       matrix:
         config:
+          - githubRepo: Applifting/Humansis
+            sonarProjectKey: security-check-box_humansis
+            enabled: true
+            requiresNodeJs: false
           - githubRepo: cortezaproject/corteza
             sonarProjectKey: security-check-box_corteza
             enabled: true
