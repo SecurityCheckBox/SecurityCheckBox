@@ -61,7 +61,7 @@ jobs:
           'workflow_dispatch')
             case "${{ github.event.inputs.repo }}" in
             '(all)' | "${{ matrix.config.githubRepo }}")
-              echo "Manual run for this repo '${{ github.event.input.repo }}'."
+              echo "Manual run for this repo '${{ github.event.inputs.repo }}'."
               echo "do_analysis=true" >> $GITHUB_ENV
               exit 0
             ;;
