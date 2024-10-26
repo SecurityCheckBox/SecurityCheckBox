@@ -10,6 +10,7 @@ on:
         default: '(all)'
         options:
           - '(all)'
+          - AntennaPod/AntennaPod
           - Applifting/Humansis
           - cortezaproject/corteza
           - Gnucash/gnucash
@@ -29,6 +30,10 @@ jobs:
     strategy:
       matrix:
         config:
+          - githubRepo: AntennaPod/AntennaPod
+            sonarProjectKey: security-check-box_antenna-pod
+            enabled: true
+            requiresNodeJs: false
           - githubRepo: Applifting/Humansis
             sonarProjectKey: security-check-box_humansis
             enabled: true
