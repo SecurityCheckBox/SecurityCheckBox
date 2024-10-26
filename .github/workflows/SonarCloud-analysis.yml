@@ -14,6 +14,7 @@ on:
           - Gnucash/gnucash
           - kalkulacka-one/kalkulacka
           - KohoVolit/NapisteJim
+          - KohoVolit/partmonitor.hu
           - zegkljan/scorer
           - zegkljan/videoreferee
   schedule:  # On a schedule
@@ -38,7 +39,11 @@ jobs:
             enabled: true
             requiresNodeJs: false
           - githubRepo: KohoVolit/NapisteJim
-            sonarProjectKey: security-check-box_napistehjim
+            sonarProjectKey: security-check-box_napiste-jim
+            enabled: true
+            requiresNodeJs: false
+          - githubRepo: KohoVolit/partmonitor.hu
+            sonarProjectKey: security-check-box_voksmonitor-hu
             enabled: true
             requiresNodeJs: false
           - githubRepo: zegkljan/scorer
