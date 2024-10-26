@@ -31,9 +31,57 @@ jobs:
 #            sonarProjectKey: 's_pk1' # SonarCloud project key
 #            enabled: true            # Whether the scheduled analysis of this repo is enabled
     steps:
+      - name: Check skipping conditions
+        id: check_skipping_conditions
+        run: |
+          case "${{ github.event_name }}" in 
+          'schedule')
+            if ! "${{ matrix.config.enabled }}"; then
+              echo "Scheduled analysis disabled for this repo."
+              echo "do_analysis=false" >> $GITHUB_ENV
+              exit 0
+            fi
+            LAST_COMMIT_DATE="$(curl -s \
+              "https://api.github.com/repos/${{ matrix.config.githubRepo }}/commits?per_page=1" | \
+              jq -r '.[0].commit.committer.date')"
+            # Convert to Unix timestamp for comparison
+            LAST_COMMIT_TIMESTAMP=$(date -d "$LAST_COMMIT_DATE" +%s)
+            CURRENT_TIMESTAMP=$(date +%s)
+            # Calculate age in days
+            AGE_IN_DAYS=$(( (CURRENT_TIMESTAMP - LAST_COMMIT_TIMESTAMP) / 86400 ))
+            echo "Last commit age: $AGE_IN_DAYS days"
+            if [ "$AGE_IN_DAYS" -gt 8 ]; then
+              echo "do_analysis=false" >> $GITHUB_ENV
+              exit 0
+            else
+              echo "do_analysis=true" >> $GITHUB_ENV
+              exit 0
+            fi
+          ;;
+          'workflow_dispatch')
+            case "${{ github.event.inputs.repo }}" in
+            '(all)' | "${{ matrix.config.githubRepo }}")
+              echo "Manual run for this repo '${{ github.event.input.repo }}'."
+              echo "do_analysis=true" >> $GITHUB_ENV
+              exit 0
+            ;;
+            *)
+              echo "Manual run for another repo '${{ github.event.inputs.repo }}'."
+              echo "do_analysis=false" >> $GITHUB_ENV
+              exit 0
+            ;;
+            esac
+          ;;
+          *)
+            echo "WARNING: Unexpected GitHub event name '${{ github.event_name }}'."
+            echo "do_analysis=true" >> $GITHUB_ENV
+            exit 0
+          ;;
+          esac
+
       - name: Checkout ${{ matrix.config.githubRepo }}
         uses: actions/checkout@v4
-        if: (github.event_name == 'schedule' && matrix.config.enabled) || (github.event_name == 'workflow_dispatch' && (github.event.inputs.repo == '(all)' || github.event.inputs.repo == matrix.config.githubRepo ))
+        if: env.do_analyzis == 'true'
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
           repository: '${{ matrix.config.githubRepo }}'
@@ -43,7 +91,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        if: (github.event_name == 'schedule' && matrix.config.enabled) || (github.event_name == 'workflow_dispatch' && (github.event.inputs.repo == '(all)' || github.event.inputs.repo == matrix.config.githubRepo ))
+        if: env.do_analyzis == 'true'
         with:
           projectBaseDir: '${{ matrix.config.githubRepo }}'
           args: >
@@ -52,4 +100,3 @@ jobs:
             -Dsonar.c.file.suffixes=-
             -Dsonar.cpp.file.suffixes=-
             -Dsonar.objc.file.suffixes=-
-
