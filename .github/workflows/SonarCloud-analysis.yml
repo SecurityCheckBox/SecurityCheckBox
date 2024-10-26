@@ -34,3 +34,7 @@ jobs:
           args: >
             -Dsonar.organization=security-check-box
             -Dsonar.projectKey=${{ matrix.config.sonarProjectKey }}
+            -Dsonar.c.file.suffixes=-
+            -Dsonar.cpp.file.suffixes=-
+            -Dsonar.objc.file.suffixes=-
+
