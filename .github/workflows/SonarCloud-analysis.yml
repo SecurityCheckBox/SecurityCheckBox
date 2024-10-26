@@ -16,6 +16,7 @@ on:
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim
           - KohoVolit/partmonitor.hu
+          - SeanFranklin/hemaScorecard
           - zegkljan/scorer
           - zegkljan/videoreferee
   schedule:  # On a schedule
@@ -49,6 +50,10 @@ jobs:
             requiresNodeJs: false
           - githubRepo: KohoVolit/partmonitor.hu
             sonarProjectKey: security-check-box_voksmonitor-hu
+            enabled: true
+            requiresNodeJs: false
+          - githubRepo: SeanFranklin/hemaScorecard
+            sonarProjectKey: security-check-box_hema-score-card
             enabled: true
             requiresNodeJs: false
           - githubRepo: zegkljan/scorer
