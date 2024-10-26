@@ -34,36 +34,3 @@ It runs weekly on schedule, but it can also be run manually [here](https://githu
 * Add a new config in the [pipeline](./.github/workflows/SonarCloud-analysis.yml)
   * input > options
   * strategy > matrix > config
-
-## TODOs
-
-### Skip unchanged in scheduled analysis
-
-### C code analysis is disabled
-
-It was causing `java.lang.UnsupportedOperationException` errors: 
-
-```
-11:26:49.211 INFO  Sensor CFamily [cpp]
-11:26:49.242 INFO  CFamily plugin version: 6.60.0.76379 (5be0f75cd1a7285a862a55f79e785691e99cc32b)
-11:26:49.244 ERROR 
-
-The only way to get an accurate analysis of C/C++/Objective-C files in Manual Configuration mode is to provide a compilation database through the property "sonar.cfamily.compile-commands"; The option was not specified.
-
-You can generate a compilation database by wrapping your clean build with SonarSource build-wrapper, or by using a third party tool.
-For more information consult the documentation at https://docs.sonarsource.com/sonarcloud/advanced-setup/languages/c-family/analysis-modes/
-
-If you don't want to analyze C/C++/Objective-C files, then prevent them from being analyzed by setting the following properties:
-
-    sonar.c.file.suffixes=-
-    sonar.cpp.file.suffixes=-
-    sonar.objc.file.suffixes=-
-```
-
-Disable in the pipeline using:
-
-```properties
--Dsonar.c.file.suffixes=-
--Dsonar.cpp.file.suffixes=-
--Dsonar.objc.file.suffixes=-
-```
