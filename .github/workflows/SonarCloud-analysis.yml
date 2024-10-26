@@ -13,8 +13,10 @@ jobs:
         config:
           - githubOrg: 'cortezaproject'
             githubRepo: 'corteza'
+            sonarProjectKey: security-check-box_corteza
 #          - githubOrg: 'org1'       # GitHub organization name for the repo
 #            githubRepo: 'repo1'     # GitHub repository name
+#            sonarProjectKey: 'pk1'  # SonarCloud project key
     steps:
       - name: Checkout ${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}
         uses: actions/checkout@v4
@@ -26,5 +28,9 @@ jobs:
       - name: Run SonarCloud Analysis @ ${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_WORKSPACE: '${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}'  # Set the workspace path for each repo
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          projectBaseDir: '${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}'
+          args: >
+            -Dsonar.organization=security-check-box
+            -Dsonar.projectKey=${{ matrix.config.sonarProjectKey }}
