@@ -24,9 +24,18 @@ It runs weekly on schedule, but it can also be run manually [here](https://githu
 
 ## Adding a repo
 
-TODO
+* Create a project in [SonarCloud](https://sonarcloud.io/projects/create)
+  * Create a project manually
+  * Organization: SecurityCheckBox
+  * Display name: (name of the project)
+  * Project key: (copy it and use it in the pipeline)
+  * Visibility: Public
+  * New code: 90 days
+* Add a new config in the [pipeline](./.github/workflows/SonarCloud-analysis.yml) > strategy > matrix > config
 
 ## TODOs
+
+### Manual run for just one repo
 
 ### C code analysis is disabled
 
