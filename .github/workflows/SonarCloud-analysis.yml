@@ -6,11 +6,12 @@ on:
       repo:
         description: Which repository should be analysed?
         required: true
+        type: choice
         default: '(all)'
         options:
           - '(all)'
-          - 'cortezaproject/corteza'
-          - 'zegkljan/scorer'
+          - cortezaproject/corteza
+          - zegkljan/scorer
   schedule:  # On a schedule
     - cron: '0 16 * * 4'
 
