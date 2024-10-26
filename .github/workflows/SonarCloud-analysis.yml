@@ -11,6 +11,7 @@ on:
         options:
           - '(all)'
           - cortezaproject/corteza
+          - Gnucash/gnucash
           - zegkljan/scorer
           - zegkljan/videoreferee
   schedule:  # On a schedule
@@ -24,6 +25,10 @@ jobs:
         config:
           - githubRepo: cortezaproject/corteza
             sonarProjectKey: security-check-box_corteza
+            enabled: true
+            requiresNodeJs: false
+          - githubRepo: Gnucash/gnucash
+            sonarProjectKey: security-check-box_gnucash
             enabled: true
             requiresNodeJs: false
           - githubRepo: zegkljan/scorer
