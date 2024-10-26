@@ -13,6 +13,7 @@ on:
           - cortezaproject/corteza
           - Gnucash/gnucash
           - kalkulacka-one/kalkulacka
+          - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim
           - KohoVolit/partmonitor.hu
           - zegkljan/scorer
@@ -36,6 +37,10 @@ jobs:
             requiresNodeJs: false
           - githubRepo: kalkulacka-one/kalkulacka
             sonarProjectKey: security-check-box_volebni-kalkulacka
+            enabled: true
+            requiresNodeJs: false
+          - githubRepo: KohoVolit/Mandaty.cz
+            sonarProjectKey: security-check-box_mandaty-cz
             enabled: true
             requiresNodeJs: false
           - githubRepo: KohoVolit/NapisteJim
