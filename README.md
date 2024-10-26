@@ -15,3 +15,13 @@ Fit example [this one](https://docs.sonarsource.com/sonarcloud/getting-started/g
 
 Very useful is the option to integrate SonarCloud code quality check on pull requests.
 That way, you can reject pull requests with detected problems.
+
+# Notes for me 
+
+## Running the [pipeline](./.github/workflows/SonarCloud-analysis.yml)
+
+It runs weekly on schedule, but it can also be run manually [here](https://github.com/SecurityCheckBox/SecurityCheckBox/actions/workflows/SonarCloud-analysis.yml).
+
+## Adding a repo
+
+TODO
