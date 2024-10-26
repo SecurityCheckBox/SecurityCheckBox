@@ -194,8 +194,8 @@ jobs:
       - name: Build and analyze
         if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        working-directory: '${{ matrix.config.githubRepo }}'
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=security-check-box -Dsonar.projectKey=${{ matrix.config.sonarProjectKey }}
 
       - name: Run SonarCloud Analysis @ ${{ matrix.config.githubRepo }}
