@@ -34,50 +34,74 @@ jobs:
             sonarProjectKey: security-check-box_humansis
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: cortezaproject/corteza
             sonarProjectKey: security-check-box_corteza
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: Gnucash/gnucash
             sonarProjectKey: security-check-box_gnucash
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: kalkulacka-one/kalkulacka
             sonarProjectKey: security-check-box_volebni-kalkulacka
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: KohoVolit/Mandaty.cz
             sonarProjectKey: security-check-box_mandaty-cz
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: KohoVolit/NapisteJim
             sonarProjectKey: security-check-box_napiste-jim
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: KohoVolit/partmonitor.hu
             sonarProjectKey: security-check-box_voksmonitor-hu
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: SeanFranklin/hemaScorecard
             sonarProjectKey: security-check-box_hema-score-card
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: nowina-solutions/nexu
             sonarProjectKey: security-check-box_hema-nexu
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 17
+            analyze: 'maven'
           - githubRepo: zegkljan/scorer
             sonarProjectKey: security-check-box_scorer
             enabled: true
             requiresNodeJs: true
+            jdkVersion: 0
+            analyze: 'default'
           - githubRepo: zegkljan/videoreferee
             sonarProjectKey: security-check-box_video-referee
             enabled: true
             requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
 #          - githubRepo: 'org1/repo1' # GitHub organization/repozitory name
 #            sonarProjectKey: 's_pk1' # SonarCloud project key
 #            enabled: true            # Whether the scheduled analysis of this repo is enabled
 #            requiresNodeJs: false    # Whether to setup Node.js and run `npm install`
+#            jdkVersion: 17           # JDK version if required or 0 otherwise
+#            analyze: 'default'       # Analysis method
     steps:
       - name: Check skipping conditions
         id: check_skipping_conditions
@@ -144,11 +168,41 @@ jobs:
         run: npm install
         working-directory: '${{ matrix.config.githubRepo }}'
 
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        if: env.do_analysis == 'true' && matrix.config.jdkVersion > 0
+        with:
+          java-version: ${{ matrix.config.jdkVersion }}
+          distribution: 'temurin'
+          
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v4
+        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
+      - name: Build and analyze
+        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=security-check-box -Dsonar.projectKey=${{ matrix.config.sonarProjectKey }}
+
       - name: Run SonarCloud Analysis @ ${{ matrix.config.githubRepo }}
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        if: env.do_analysis == 'true'
+        if: env.do_analysis == 'true' && matrix.config.analyze == 'default'
         with:
           projectBaseDir: '${{ matrix.config.githubRepo }}'
           args: >
