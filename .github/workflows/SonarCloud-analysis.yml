@@ -12,6 +12,7 @@ on:
           - '(all)'
           - cortezaproject/corteza
           - Gnucash/gnucash
+          - kalkulacka-one/kalkulacka
           - zegkljan/scorer
           - zegkljan/videoreferee
   schedule:  # On a schedule
@@ -29,6 +30,10 @@ jobs:
             requiresNodeJs: false
           - githubRepo: Gnucash/gnucash
             sonarProjectKey: security-check-box_gnucash
+            enabled: true
+            requiresNodeJs: false
+          - githubRepo: kalkulacka-one/kalkulacka
+            sonarProjectKey: security-check-box_volebni-kalkulacka
             enabled: true
             requiresNodeJs: false
           - githubRepo: zegkljan/scorer
