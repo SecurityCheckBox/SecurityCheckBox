@@ -82,7 +82,7 @@ jobs:
             sonarProjectKey: security-check-box_hema-nexu
             enabled: true
             requiresNodeJs: false
-            jdkVersion: 17
+            jdkVersion: 8
             analyze: 'maven'
           - githubRepo: zegkljan/scorer
             sonarProjectKey: security-check-box_scorer
