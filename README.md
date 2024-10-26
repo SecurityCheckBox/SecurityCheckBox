@@ -31,11 +31,13 @@ It runs weekly on schedule, but it can also be run manually [here](https://githu
   * Project key: (copy it and use it in the pipeline)
   * Visibility: Public
   * New code: 90 days
-* Add a new config in the [pipeline](./.github/workflows/SonarCloud-analysis.yml) > strategy > matrix > config
+* Add a new config in the [pipeline](./.github/workflows/SonarCloud-analysis.yml)
+  * input > options
+  * strategy > matrix > config
 
 ## TODOs
 
-### Manual run for just one repo
+### Skip unchanged in scheduled analysis
 
 ### C code analysis is disabled
 
