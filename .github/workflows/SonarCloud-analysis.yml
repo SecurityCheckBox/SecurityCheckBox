@@ -24,12 +24,15 @@ jobs:
           - githubRepo: cortezaproject/corteza
             sonarProjectKey: security-check-box_corteza
             enabled: true
+            requiresNodeJs: false
           - githubRepo: zegkljan/scorer
             sonarProjectKey: security-check-box_scorer
             enabled: true
+            requiresNodeJs: true
 #          - githubRepo: 'org1/repo1' # GitHub organization/repozitory name
 #            sonarProjectKey: 's_pk1' # SonarCloud project key
 #            enabled: true            # Whether the scheduled analysis of this repo is enabled
+#            requiresNodeJs: false    # Whether to setup Node.js and run `npm install`
     steps:
       - name: Check skipping conditions
         id: check_skipping_conditions
@@ -86,6 +89,14 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
           repository: '${{ matrix.config.githubRepo }}'
           path: '${{ matrix.config.githubRepo }}'  # Checkout each repo in a unique path
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        if: matrix.config.requiresNodeJs
+
+      - name: Run npm install
+        if: matrix.config.requiresNodeJs
+        run: npm install
 
       - name: Run SonarCloud Analysis @ ${{ matrix.config.githubRepo }}
         uses: SonarSource/sonarcloud-github-action@master
