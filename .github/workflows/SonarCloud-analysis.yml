@@ -13,10 +13,10 @@ jobs:
         config:
           - githubOrg: 'cortezaproject'
             githubRepo: 'corteza'
-            sonarProjectKey: 'corteza'
-#          - githubOrg: 'org1'       # GitHub organization for the first repo
-#            githubRepo: 'repo1'       # Repository name
-#            sonarProjectKey: 'project-key-1'  # SonarCloud project key for the repo
+            sonarProjectKey: 'security-check-box_corteza'
+#          - githubOrg: 'org1'       # GitHub organization name for the repo
+#            githubRepo: 'repo1'     # GitHub repository name
+#            sonarProjectKey: 'pk1'  # SonarCloud project key for the repo
 
     steps:
       - name: Checkout ${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}
