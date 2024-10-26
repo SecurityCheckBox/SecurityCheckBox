@@ -12,6 +12,7 @@ on:
           - '(all)'
           - cortezaproject/corteza
           - zegkljan/scorer
+          - zegkljan/videoreferee
   schedule:  # On a schedule
     - cron: '0 16 * * 4'
 
@@ -29,6 +30,10 @@ jobs:
             sonarProjectKey: security-check-box_scorer
             enabled: true
             requiresNodeJs: true
+          - githubRepo: zegkljan/videoreferee
+            sonarProjectKey: security-check-box_video-referee
+            enabled: true
+            requiresNodeJs: false
 #          - githubRepo: 'org1/repo1' # GitHub organization/repozitory name
 #            sonarProjectKey: 's_pk1' # SonarCloud project key
 #            enabled: true            # Whether the scheduled analysis of this repo is enabled
