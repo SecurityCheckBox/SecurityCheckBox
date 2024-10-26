@@ -92,10 +92,10 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        if: matrix.config.requiresNodeJs
+        if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
 
       - name: Run npm install
-        if: matrix.config.requiresNodeJs
+        if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
         run: npm install
         working-directory: '${{ matrix.config.githubRepo }}'
 
