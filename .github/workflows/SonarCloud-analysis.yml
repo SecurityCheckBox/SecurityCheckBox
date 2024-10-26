@@ -81,7 +81,7 @@ jobs:
 
       - name: Checkout ${{ matrix.config.githubRepo }}
         uses: actions/checkout@v4
-        if: env.do_analyzis == 'true'
+        if: env.do_analysis == 'true'
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
           repository: '${{ matrix.config.githubRepo }}'
@@ -91,7 +91,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        if: env.do_analyzis == 'true'
+        if: env.do_analysis == 'true'
         with:
           projectBaseDir: '${{ matrix.config.githubRepo }}'
           args: >
