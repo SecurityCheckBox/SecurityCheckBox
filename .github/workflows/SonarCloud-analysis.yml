@@ -97,6 +97,7 @@ jobs:
       - name: Run npm install
         if: matrix.config.requiresNodeJs
         run: npm install
+        working-directory: '${{ matrix.config.githubRepo }}'
 
       - name: Run SonarCloud Analysis @ ${{ matrix.config.githubRepo }}
         uses: SonarSource/sonarcloud-github-action@master
