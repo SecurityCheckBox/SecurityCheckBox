@@ -1,0 +1,35 @@
+name: SonarCloud Multi-Repo Analysis
+
+on:
+  workflow_dispatch:  # Manually trigger the workflow
+  schedule:           # On a schedule
+    - cron: '0 16 * * 4'
+
+jobs:
+  sonarcloud-analysis:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        config:
+          - githubOrg: 'cortezaproject'
+            githubRepo: 'corteza'
+            sonarProjectKey: 'corteza'
+#          - githubOrg: 'org1'       # GitHub organization for the first repo
+#            githubRepo: 'repo1'       # Repository name
+#            sonarProjectKey: 'project-key-1'  # SonarCloud project key for the repo
+
+    steps:
+      - name: Checkout ${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}
+        uses: actions/checkout@v4
+        with:
+          repository: '${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}'
+          path: '${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}'  # Checkout each repo in a unique path
+
+      - name: Run SonarCloud Analysis @ ${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}
+        uses: SonarSource/sonarcloud-github-action@v3
+        with:
+          projectKey: ${{ matrix.config.sonarProjectKey }}
+          organization: ${{ secrets.SONAR_ORG_KEY }}
+          token: ${{ secrets.SONAR_TOKEN }}
+        env:
+          GITHUB_WORKSPACE: '${{ matrix.config.githubOrg }}/${{ matrix.config.githubRepo }}'  # Set the workspace path for each repo
