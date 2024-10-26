@@ -4,6 +4,8 @@ This repo contains just a pipeline that analyzes code in some repositories that 
 
 It uses [SonarCloud](https://www.sonarsource.com/products/sonarcloud/) for the analysis.
 
+Here are [the analysis results](https://sonarcloud.io/organizations/security-check-box/projects).
+
 ## Setting up your own SonarCloud analysis
 
 I recommend you to set up your own SonarCloud analysis on every repo. 
