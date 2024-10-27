@@ -1,4 +1,4 @@
-name: SonarCloud Multi-Repo Analysis
+name: SonarCloud Analysis
 
 on:
   workflow_dispatch:  # Manually trigger the workflow
@@ -168,7 +168,7 @@ jobs:
         run: npm install
         working-directory: '${{ matrix.config.githubRepo }}'
 
-      - name: Set up JDK
+      - name: Setup JDK
         uses: actions/setup-java@v4
         if: env.do_analysis == 'true' && matrix.config.jdkVersion > 0
         with:
@@ -191,14 +191,14 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Build and analyze
+      - name: Build Maven and analyze
         if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         working-directory: '${{ matrix.config.githubRepo }}'
         run: mvn -B verify -DskipTests=true org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=security-check-box -Dsonar.projectKey=${{ matrix.config.sonarProjectKey }}
 
-      - name: Run SonarCloud Analysis @ ${{ matrix.config.githubRepo }}
+      - name: Run SonarCloud Analysis
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
