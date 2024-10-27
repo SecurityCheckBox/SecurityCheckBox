@@ -17,7 +17,6 @@ on:
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim
           - KohoVolit/partmonitor.hu
-          - nowina-solutions/nexu
           - SeanFranklin/hemaScorecard
           - zegkljan/scorer
           - zegkljan/videoreferee
@@ -78,12 +77,6 @@ jobs:
             requiresNodeJs: false
             jdkVersion: 0
             analyze: 'default'
-          - githubRepo: nowina-solutions/nexu
-            sonarProjectKey: security-check-box_hema-nexu
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 8
-            analyze: 'maven'
           - githubRepo: zegkljan/scorer
             sonarProjectKey: security-check-box_scorer
             enabled: true
