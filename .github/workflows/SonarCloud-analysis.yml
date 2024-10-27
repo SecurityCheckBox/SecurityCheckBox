@@ -18,6 +18,7 @@ on:
           - KohoVolit/NapisteJim
           - KohoVolit/partmonitor.hu
           - LibreHealthIO/lh-ehr
+          - LibreHealthIO/lh-ehr-larvel
           - SeanFranklin/hemaScorecard
           - zegkljan/scorer
           - zegkljan/videoreferee
@@ -74,6 +75,12 @@ jobs:
             analyze: 'default'
           - githubRepo: LibreHealthIO/lh-ehr
             sonarProjectKey: security-check-box_libre-health-ehr
+            enabled: true
+            requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
+          - githubRepo: LibreHealthIO/lh-ehr-larvel
+            sonarProjectKey: security-check-box_libre-health-ehr-larvel
             enabled: true
             requiresNodeJs: false
             jdkVersion: 0
