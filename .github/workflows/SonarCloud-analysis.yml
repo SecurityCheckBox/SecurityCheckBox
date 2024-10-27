@@ -17,6 +17,7 @@ on:
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim
           - KohoVolit/partmonitor.hu
+          - LibreHealthIO/lh-ehr
           - SeanFranklin/hemaScorecard
           - zegkljan/scorer
           - zegkljan/videoreferee
@@ -67,6 +68,12 @@ jobs:
             analyze: 'default'
           - githubRepo: KohoVolit/partmonitor.hu
             sonarProjectKey: security-check-box_voksmonitor-hu
+            enabled: true
+            requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
+          - githubRepo: LibreHealthIO/lh-ehr
+            sonarProjectKey: security-check-box_libre-health-ehr
             enabled: true
             requiresNodeJs: false
             jdkVersion: 0
