@@ -20,6 +20,7 @@ on:
           - LibreHealthIO/lh-ehr
           - LibreHealthIO/lh-ehr-laravel
           - openstreetmap/iD
+          - openstreetmap/openstreetmap-website
           - SeanFranklin/hemaScorecard
           - zegkljan/scorer
           - zegkljan/videoreferee
@@ -88,6 +89,12 @@ jobs:
             analyze: 'default'
           - githubRepo: openstreetmap/iD
             sonarProjectKey: security-check-box_libre-olen-street-map-id
+            enabled: true
+            requiresNodeJs: false
+            jdkVersion: 0
+            analyze: 'default'
+          - githubRepo: openstreetmap/openstreetmap-website
+            sonarProjectKey: security-check-box_libre-olen-street-map-web
             enabled: true
             requiresNodeJs: false
             jdkVersion: 0
