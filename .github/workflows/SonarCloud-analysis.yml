@@ -88,13 +88,13 @@ jobs:
             jdkVersion: 0
             analyze: 'default'
           - githubRepo: openstreetmap/iD
-            sonarProjectKey: security-check-box_libre-olen-street-map-id
+            sonarProjectKey: security-check-box_libre-open-street-map-id
             enabled: true
             requiresNodeJs: false
             jdkVersion: 0
             analyze: 'default'
           - githubRepo: openstreetmap/openstreetmap-website
-            sonarProjectKey: security-check-box_libre-olen-street-map-web
+            sonarProjectKey: security-check-box_libre-open-street-map-web
             enabled: true
             requiresNodeJs: false
             jdkVersion: 0
