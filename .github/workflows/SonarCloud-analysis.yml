@@ -24,8 +24,8 @@ on:
           - SeanFranklin/hemaScorecard
           - zegkljan/scorer
           - zegkljan/videoreferee
-  schedule:  # On a schedule
-    - cron: '0 16 * * 4'
+  schedule:  # On a schedule - UTC
+    - cron: '0 10 * * 5'
 
 jobs:
   sonarcloud-analysis:
