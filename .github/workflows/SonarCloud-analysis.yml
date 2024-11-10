@@ -28,6 +28,23 @@ on:
     - cron: '0 10 * * 5'
 
 jobs:
+  download-json:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    outputs:
+      filtered_config: ${{ steps.set_output.outputs.filtered_config }}
+    steps:
+      - name: Set JSON as output
+        id: set_output
+        run: |
+          url="https://raw.githubusercontent.com/SecurityCheckBox/SecurityCheckBox/refs/heads/main/.github/workflows/matrix_config.json"
+          config="$(curl -sSL "${url}")" || exit "${?}"
+          echo "${config}"
+          filtered_config="$(jq -c . <<<"${config}")"
+          echo "${filtered_config}"
+          echo "filtered_config=${filtered_config}" >>"${GITHUB_OUTPUT}"
+
   download-condition-checker:
     runs-on: ubuntu-latest
     strategy:
@@ -47,95 +64,11 @@ jobs:
 
   sonarcloud-analysis:
     runs-on: ubuntu-latest
-    needs: download-condition-checker
+    needs: [download-json, download-condition-checker]
     strategy:
       fail-fast: true
       matrix:
-        config:
-          - githubRepo: Applifting/Humansis
-            sonarProjectKey: security-check-box_humansis
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: cortezaproject/corteza
-            sonarProjectKey: security-check-box_corteza
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: Gnucash/gnucash
-            sonarProjectKey: security-check-box_gnucash
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: kalkulacka-one/kalkulacka
-            sonarProjectKey: security-check-box_volebni-kalkulacka
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: KohoVolit/Mandaty.cz
-            sonarProjectKey: security-check-box_mandaty-cz
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: KohoVolit/NapisteJim
-            sonarProjectKey: security-check-box_napiste-jim
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: KohoVolit/partmonitor.hu
-            sonarProjectKey: security-check-box_voksmonitor-hu
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: LibreHealthIO/lh-ehr
-            sonarProjectKey: security-check-box_libre-health-ehr
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: LibreHealthIO/lh-ehr-laravel
-            sonarProjectKey: security-check-box_libre-health-ehr-laravel
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: openstreetmap/iD
-            sonarProjectKey: security-check-box_open-street-map-id
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: openstreetmap/openstreetmap-website
-            sonarProjectKey: security-check-box_open-street-map-web
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: SeanFranklin/hemaScorecard
-            sonarProjectKey: security-check-box_hema-score-card
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: zegkljan/scorer
-            sonarProjectKey: security-check-box_scorer
-            enabled: true
-            requiresNodeJs: true
-            jdkVersion: 0
-            analyze: 'default'
-          - githubRepo: zegkljan/videoreferee
-            sonarProjectKey: security-check-box_video-referee
-            enabled: true
-            requiresNodeJs: false
-            jdkVersion: 0
-            analyze: 'default'
+        config: ${{ fromJson(needs.download-json.outputs.filtered_config) }}
 #          - githubRepo: 'org1/repo1' # GitHub organization/repozitory name
 #            sonarProjectKey: 's_pk1' # SonarCloud project key
 #            enabled: true            # Whether the scheduled analysis of this repo is enabled
