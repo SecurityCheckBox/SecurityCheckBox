@@ -28,9 +28,28 @@ on:
     - cron: '0 10 * * 5'
 
 jobs:
-  sonarcloud-analysis:
+  download-condition-checker:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: true
+    outputs:
+      encoded_script: ${{ steps.set_output.outputs.encoded_script }}
+    steps:
+      - name: Set script as output
+        id: set_output
+        run: |
+          url="https://raw.githubusercontent.com/SecurityCheckBox/SecurityCheckBox/refs/heads/main/.github/workflows/check_skipping_conditions.sh"
+          script="$(curl -sSL "${url}")" || exit "${?}"
+          echo "${script}"
+          encoded_script="$(base64 -w 0 <<<"${script}")"
+          echo "${encoded_script}"
+          echo "encoded_script=${encoded_script}" >>"${GITHUB_OUTPUT}"
+
+  sonarcloud-analysis:
+    runs-on: ubuntu-latest
+    needs: download-condition-checker
+    strategy:
+      fail-fast: true
       matrix:
         config:
           - githubRepo: Applifting/Humansis
@@ -127,50 +146,8 @@ jobs:
       - name: Check skipping conditions
         id: check_skipping_conditions
         run: |
-          case "${{ github.event_name }}" in 
-          'schedule')
-            if ! "${{ matrix.config.enabled }}"; then
-              echo "Scheduled analysis disabled for this repo."
-              echo "do_analysis=false" >> $GITHUB_ENV
-              exit 0
-            fi
-            LAST_COMMIT_DATE="$(curl -s \
-              "https://api.github.com/repos/${{ matrix.config.githubRepo }}/commits?per_page=1" | \
-              jq -r '.[0].commit.committer.date')"
-            # Convert to Unix timestamp for comparison
-            LAST_COMMIT_TIMESTAMP=$(date -d "$LAST_COMMIT_DATE" +%s)
-            CURRENT_TIMESTAMP=$(date +%s)
-            # Calculate age in days
-            AGE_IN_DAYS=$(( (CURRENT_TIMESTAMP - LAST_COMMIT_TIMESTAMP) / 86400 ))
-            echo "Last commit age: $AGE_IN_DAYS days"
-            if [ "$AGE_IN_DAYS" -gt 8 ]; then
-              echo "do_analysis=false" >> $GITHUB_ENV
-              exit 0
-            else
-              echo "do_analysis=true" >> $GITHUB_ENV
-              exit 0
-            fi
-          ;;
-          'workflow_dispatch')
-            case "${{ github.event.inputs.repo }}" in
-            '(all)' | "${{ matrix.config.githubRepo }}")
-              echo "Manual run for this repo '${{ github.event.inputs.repo }}'."
-              echo "do_analysis=true" >> $GITHUB_ENV
-              exit 0
-            ;;
-            *)
-              echo "Manual run for another repo '${{ github.event.inputs.repo }}'."
-              echo "do_analysis=false" >> $GITHUB_ENV
-              exit 0
-            ;;
-            esac
-          ;;
-          *)
-            echo "WARNING: Unexpected GitHub event name '${{ github.event_name }}'."
-            echo "do_analysis=true" >> $GITHUB_ENV
-            exit 0
-          ;;
-          esac
+          [[ "${{ needs.download-condition-checker.outputs.encoded_script }}" == "" ]] && echo "Empty script" && exit 1
+          base64 --decode <<<"${{ needs.download-condition-checker.outputs.encoded_script }}" | bash -s -- "${{ github.event_name }}" "${{ github.event.inputs.repo }}" "${{ matrix.config.enabled }}" "${{ matrix.config.githubRepo }}"
 
       - name: Checkout ${{ matrix.config.githubRepo }}
         uses: actions/checkout@v4
