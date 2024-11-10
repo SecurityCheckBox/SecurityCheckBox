@@ -1,5 +1,6 @@
 [
   {
+    "_TODO": "gradle (kotlin)",
     "githubRepo": "Applifting/Humansis",
     "sonarProjectKey": "security-check-box_humansis",
     "enabled": true,
@@ -14,6 +15,7 @@
     "jdkVersion": 0,
     "analyze": "default"
   }, {
+    "_TODO": "C/C++",
     "githubRepo": "Gnucash/gnucash",
     "sonarProjectKey": "security-check-box_gnucash",
     "enabled": true,
@@ -31,21 +33,21 @@
     "githubRepo": "KohoVolit/Mandaty.cz",
     "sonarProjectKey": "security-check-box_mandaty-cz",
     "enabled": true,
-    "requiresNodeJs": false,
+    "requiresNodeJs": true,
     "jdkVersion": 0,
     "analyze": "default"
   }, {
     "githubRepo": "KohoVolit/NapisteJim",
     "sonarProjectKey": "security-check-box_napiste-jim",
     "enabled": true,
-    "requiresNodeJs": false,
+    "requiresNodeJs": true,
     "jdkVersion": 0,
     "analyze": "default"
   }, {
     "githubRepo": "KohoVolit/partmonitor.hu",
     "sonarProjectKey": "security-check-box_voksmonitor-hu",
     "enabled": true,
-    "requiresNodeJs": false,
+    "requiresNodeJs": true,
     "jdkVersion": 0,
     "analyze": "default"
   }, {
@@ -59,14 +61,14 @@
     "githubRepo": "LibreHealthIO/lh-ehr-laravel",
     "sonarProjectKey": "security-check-box_libre-health-ehr-laravel",
     "enabled": true,
-    "requiresNodeJs": false,
+    "requiresNodeJs": true,
     "jdkVersion": 0,
     "analyze": "default"
   }, {
     "githubRepo": "openstreetmap/iD",
     "sonarProjectKey": "security-check-box_open-street-map-id",
     "enabled": true,
-    "requiresNodeJs": false,
+    "requiresNodeJs": true,
     "jdkVersion": 0,
     "analyze": "default"
   }, {
@@ -91,6 +93,7 @@
     "jdkVersion": 0,
     "analyze": "default"
   }, {
+    "_TODO": "gradle (kotlin)",
     "githubRepo": "zegkljan/videoreferee",
     "sonarProjectKey": "security-check-box_video-referee",
     "enabled": true,
