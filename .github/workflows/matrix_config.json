@@ -10,7 +10,7 @@
     "githubRepo": "cortezaproject/corteza",
     "sonarProjectKey": "security-check-box_corteza",
     "enabled": true,
-    "requiresNodeJs": false,
+    "requiresNodeJs": true,
     "jdkVersion": 0,
     "analyze": "default"
   }, {
@@ -24,7 +24,7 @@
     "githubRepo": "kalkulacka-one/kalkulacka",
     "sonarProjectKey": "security-check-box_volebni-kalkulacka",
     "enabled": true,
-    "requiresNodeJs": false,
+    "requiresNodeJs": true,
     "jdkVersion": 0,
     "analyze": "default"
   }, {
