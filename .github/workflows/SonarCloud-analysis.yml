@@ -30,8 +30,6 @@ on:
 jobs:
   download-json:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
     outputs:
       filtered_config: ${{ steps.set_output.outputs.filtered_config }}
     steps:
@@ -47,8 +45,6 @@ jobs:
 
   download-condition-checker:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: true
     outputs:
       encoded_script: ${{ steps.set_output.outputs.encoded_script }}
     steps:
@@ -66,7 +62,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [download-json, download-condition-checker]
     strategy:
-      fail-fast: true
       matrix:
         config: ${{ fromJson(needs.download-json.outputs.filtered_config) }}
 #          - githubRepo: 'org1/repo1' # GitHub organization/repozitory name
