@@ -12,6 +12,7 @@ on:
           - '(all)'
           - Applifting/Humansis
           - cortezaproject/corteza
+          - cortezaproject/corteza-server-corredor
           - Gnucash/gnucash
           - kalkulacka-one/kalkulacka
           - KohoVolit/Mandaty.cz

@@ -15,6 +15,13 @@
     "jdkVersion": 0,
     "analyze": "default"
   }, {
+    "githubRepo": "cortezaproject/corteza-server-corredor",
+    "sonarProjectKey": "security-check-box_corteza-corredor",
+    "enabled": true,
+    "requiresNodeJs": true,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
     "_TODO": "C/C++",
     "githubRepo": "Gnucash/gnucash",
     "sonarProjectKey": "security-check-box_gnucash",
