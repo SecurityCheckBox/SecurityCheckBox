@@ -134,6 +134,7 @@ jobs:
           projectBaseDir: '${{ matrix.config.githubRepo }}'
           args: >
             -Dsonar.organization=security-check-box
+            -Dsonar.projectName=${{ matrix.config.githubRepo }}
             -Dsonar.projectKey=${{ matrix.config.sonarProjectKey }}
             -Dsonar.c.file.suffixes=-
             -Dsonar.cpp.file.suffixes=-
