@@ -17,7 +17,7 @@ function Do_Analysis() {
 
 case "${event_name}" in 
 'schedule')
-  if "${matrix_config_enabled}" != true; then
+  if [[ "${matrix_config_enabled}" != true ]]; then
     echo "Scheduled analysis disabled for this repo."
     Do_Analysis false
   fi
