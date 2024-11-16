@@ -110,6 +110,15 @@ jobs:
         uses: actions/setup-node@v4
         if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
 
+      - name: Cache Node.js dependencies
+        uses: actions/cache@v4
+        if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.config.githubRepo }}-npm-
+
       - name: Run npm install
         if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
         working-directory: '${{ matrix.config.githubRepo }}'
@@ -127,16 +136,25 @@ jobs:
         if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
         with:
           path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
+          key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-sonar-${{ hashFiles('**/sonar-project.properties') }}
+          restore-keys: ${{ runner.os }}-${{ matrix.config.githubRepo }}-sonar-
 
       - name: Cache Maven packages
         uses: actions/cache@v4
         if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-${{ matrix.config.githubRepo }}-m2-
+
+      - name: Cache Maven build outputs
+        uses: actions/cache@v4
+        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        with:
+          path: target
+          key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-maven-target-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.config.githubRepo }}-maven-target-
 
       - name: Build Maven and analyze
         if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
