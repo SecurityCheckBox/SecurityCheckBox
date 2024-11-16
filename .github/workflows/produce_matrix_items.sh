@@ -7,42 +7,44 @@ shift
 
 function List_Items() {
   cat <<EOF | grep -v '^#'
-#_GitHubOwnerName  GitHubRepoName                     scheduleEnabled  requiresNodeJs  jdkVersion  analysisMethod  [comment]
-Applifting         Humansis                           true             false           0           default         TODO: gradle (kotlin)
-cortezaproject     corteza                            true             true            0           default
-cortezaproject     corteza-server-corredor            true             true            0           default
-getgrav            grav                               true             false           0           default
-getgrav            grav-plugin-admin                  true             false           0           default
-getgrav            grav-plugin-editor-buttons         true             false           0           default
-getgrav            grav-plugin-email                  true             false           0           default
-getgrav            grav-plugin-error                  true             false           0           default
-getgrav            grav-plugin-featherlight           true             false           0           default
-getgrav            grav-plugin-form                   true             false           0           default
-getgrav            grav-plugin-langswitcher           true             false           0           default
-getgrav            grav-plugin-login                  true             false           0           default
-getgrav            grav-plugin-markdown-notices       true             false           0           default
-getgrav            grav-plugin-problems               true             false           0           default
-getgrav            grav-plugin-youtube                true             false           0           default
-Gnucash            gnucash                            true             false           0           default         TODO: C/C++
-hibbitts-design    grav-plugin-external-links         true             false           0           default
-kalkulacka-one     kalkulacka                         true             true            0           default
-KohoVolit          Mandaty.cz                         true             true            0           default
-KohoVolit          NapisteJim                         true             true            0           default
-KohoVolit          partmonitor.hu                     true             true            0           default
-LibreHealthIO      lh-ehr                             true             false           0           default
-LibreHealthIO      lh-ehr-laravel                     true             true            0           default
-openstreetmap      iD                                 true             true            0           default
-openstreetmap      openstreetmap-website              true             false           0           default
-rolling-cz         cistky-minihra                     true             true            0           default
-rolling-cz         cistky-obvineni                    true             true            0           default
-rolling-cz         cistky-politiky                    true             true            0           default
-rolling-cz         konec-dejin                        true             false           0           default
-rolling-cz         moirai                             true             false           11          maven
-rolling-cz         orloj-2.0                          true             false           0           default
-SeanFranklin       hemaScorecard                      true             false           0           default
-trilbymedia        grav-plugin-flex-objects           true             false           0           default
-zegkljan           scorer                             true             true            0           default
-zegkljan           videoreferee                       true             false           0           default         TODO: gradle (kotlin)
+#                    #                             schedule  requires  JDK      analysis  #
+#_GitHub_owner_name  GitHub_repo_name              enabled   Node.js   version  method    [comment]
+#------------------  ----------------------------  --------  --------  -------  --------  ---------
+Applifting           Humansis                      true      false     0        default   TODO: gradle (kotlin)
+cortezaproject       corteza                       true      true      0        default
+cortezaproject       corteza-server-corredor       true      true      0        default
+getgrav              grav                          true      false     0        default
+getgrav              grav-plugin-admin             true      false     0        default
+getgrav              grav-plugin-editor-buttons    true      false     0        default
+getgrav              grav-plugin-email             true      false     0        default
+getgrav              grav-plugin-error             true      false     0        default
+getgrav              grav-plugin-featherlight      true      false     0        default
+getgrav              grav-plugin-form              true      false     0        default
+getgrav              grav-plugin-langswitcher      true      false     0        default
+getgrav              grav-plugin-login             true      false     0        default
+getgrav              grav-plugin-markdown-notices  true      false     0        default
+getgrav              grav-plugin-problems          true      false     0        default
+getgrav              grav-plugin-youtube           true      false     0        default
+Gnucash              gnucash                       true      false     0        default   TODO: C/C++
+hibbitts-design      grav-plugin-external-links    true      false     0        default
+kalkulacka-one       kalkulacka                    true      true      0        default
+KohoVolit            Mandaty.cz                    true      true      0        default
+KohoVolit            NapisteJim                    true      true      0        default
+KohoVolit            partmonitor.hu                true      true      0        default
+LibreHealthIO        lh-ehr                        true      false     0        default
+LibreHealthIO        lh-ehr-laravel                true      true      0        default
+openstreetmap        iD                            true      true      0        default
+openstreetmap        openstreetmap-website         true      false     0        default
+rolling-cz           cistky-minihra                true      true      0        default
+rolling-cz           cistky-obvineni               true      true      0        default
+rolling-cz           cistky-politiky               true      true      0        default
+rolling-cz           konec-dejin                   true      false     0        default
+rolling-cz           moirai                        true      false     11       maven
+rolling-cz           orloj-2.0                     true      false     0        default
+SeanFranklin         hemaScorecard                 true      false     0        default
+trilbymedia          grav-plugin-flex-objects      true      false     0        default
+zegkljan             scorer                        true      true      0        default
+zegkljan             videoreferee                  true      false     0        default   TODO: gradle (kotlin)
 EOF
 }
 
