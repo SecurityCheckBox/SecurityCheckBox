@@ -13,7 +13,20 @@ on:
           - Applifting/Humansis
           - cortezaproject/corteza
           - cortezaproject/corteza-server-corredor
+          - getgrav/grav
+          - getgrav/grav-plugin-admin
+          - getgrav/grav-plugin-editor-buttons
+          - getgrav/grav-plugin-email
+          - getgrav/grav-plugin-error
+          - getgrav/grav-plugin-featherlight
+          - getgrav/grav-plugin-form
+          - getgrav/grav-plugin-langswitcher
+          - getgrav/grav-plugin-login
+          - getgrav/grav-plugin-markdown-notices
+          - getgrav/grav-plugin-problems
+          - getgrav/grav-plugin-youtube
           - Gnucash/gnucash
+          - hibbitts-design/grav-plugin-external-links
           - kalkulacka-one/kalkulacka
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim
@@ -23,6 +36,7 @@ on:
           - openstreetmap/iD
           - openstreetmap/openstreetmap-website
           - SeanFranklin/hemaScorecard
+          - trilbymedia/grav-plugin-flex-objects
           - zegkljan/scorer
           - zegkljan/videoreferee
   schedule:  # On a schedule - UTC

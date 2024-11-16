@@ -22,9 +22,100 @@
     "jdkVersion": 0,
     "analyze": "default"
   }, {
+    "githubRepo": "getgrav/grav",
+    "sonarProjectKey": "security-check-box_grav",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-admin",
+    "sonarProjectKey": "security-check-box_grav-plugin-admin",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-editor-buttons",
+    "sonarProjectKey": "security-check-box_grav-plugin-editor-buttons",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-email",
+    "sonarProjectKey": "security-check-box_grav-plugin-email",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-error",
+    "sonarProjectKey": "security-check-box_grav-plugin-error",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-featherlight",
+    "sonarProjectKey": "security-check-box_grav-plugin-featherlight",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-form",
+    "sonarProjectKey": "security-check-box_grav-plugin-form",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-langswitcher",
+    "sonarProjectKey": "security-check-box_grav-plugin-langswitcher",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-login",
+    "sonarProjectKey": "security-check-box_grav-plugin-login",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-markdown-notices",
+    "sonarProjectKey": "security-check-box_grav-plugin-markdown-notices",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-problems",
+    "sonarProjectKey": "security-check-box_grav-plugin-problems",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "getgrav/grav-plugin-youtube",
+    "sonarProjectKey": "security-check-box_grav-plugin-youtube",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
     "_TODO": "C/C++",
     "githubRepo": "Gnucash/gnucash",
     "sonarProjectKey": "security-check-box_gnucash",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "hibbitts-design/grav-plugin-external-links",
+    "sonarProjectKey": "security-check-box_grav-plugin-external-links",
     "enabled": true,
     "requiresNodeJs": false,
     "jdkVersion": 0,
@@ -88,6 +179,13 @@
   }, {
     "githubRepo": "SeanFranklin/hemaScorecard",
     "sonarProjectKey": "security-check-box_hema-score-card",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "trilbymedia/grav-plugin-flex-objects",
+    "sonarProjectKey": "security-check-box_grav-plugin-flex-objects",
     "enabled": true,
     "requiresNodeJs": false,
     "jdkVersion": 0,
