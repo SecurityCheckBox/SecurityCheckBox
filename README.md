@@ -28,11 +28,6 @@ It runs weekly on schedule, but it can also be run manually [here](https://githu
 
 * Add a new config
   * in the [pipeline](./.github/workflows/SonarCloud-analysis.yml) > input > options
-  * in the [config JSON](./.github/workflows/matrix_config.json) - see the hints in [pipeline](./.github/workflows/SonarCloud-analysis.yml) > strategy > matrix > config
-* You can create a project in [SonarCloud](https://sonarcloud.io/projects/create), but it should not be necessary:
-  * Create a project manually
-  * Organization: SecurityCheckBox
-  * Display name: (name of the project)
-  * Project key: (copy it and use it in the pipeline)
-  * Visibility: Public
-  * New code: 90 days
+  * in the [config generator](./.github/workflows/produce_matrix_items.sh)
+* Commit + push
+* Run the workflow [manually](https://github.com/SecurityCheckBox/SecurityCheckBox/actions/workflows/SonarCloud-analysis.yml) for the new repo

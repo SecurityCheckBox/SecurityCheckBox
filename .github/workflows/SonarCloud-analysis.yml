@@ -49,58 +49,32 @@ on:
     - cron: '0 10 * * 5'
 
 jobs:
-  download-json:
+
+  produce-matrix-items:
     runs-on: ubuntu-latest
     outputs:
       filtered_config: ${{ steps.set_output.outputs.filtered_config }}
     steps:
-      - name: Set JSON as output
-        id: set_output
-        run: |
-          url="https://raw.githubusercontent.com/SecurityCheckBox/SecurityCheckBox/refs/heads/main/.github/workflows/matrix_config.json"
-          config="$(curl -sSL "${url}")" || exit "${?}"
-          echo "${config}"
-          filtered_config="$(jq -c . <<<"${config}")"
-          echo "${filtered_config}"
-          echo "filtered_config=${filtered_config}" >>"${GITHUB_OUTPUT}"
-
-  download-condition-checker:
-    runs-on: ubuntu-latest
-    outputs:
-      encoded_script: ${{ steps.set_output.outputs.encoded_script }}
-    steps:
       - name: Set script as output
         id: set_output
         run: |
-          url="https://raw.githubusercontent.com/SecurityCheckBox/SecurityCheckBox/refs/heads/main/.github/workflows/check_skipping_conditions.sh"
+          url="https://raw.githubusercontent.com/SecurityCheckBox/SecurityCheckBox/refs/heads/main/.github/workflows/produce_matrix_items.sh"
           script="$(curl -sSL "${url}")" || exit "${?}"
-          echo "${script}"
-          encoded_script="$(base64 -w 0 <<<"${script}")"
-          echo "${encoded_script}"
-          echo "encoded_script=${encoded_script}" >>"${GITHUB_OUTPUT}"
+          config="$(bash -s -- "${{ github.event_name }}" "${{ github.event.inputs.repo }}" <<<"${script}")" || exit "${?}"
+          filtered_config="$(jq -c . <<<"${config}")" || exit "${?}"
+          echo "${filtered_config}"
+          echo "filtered_config=${filtered_config}" >>"${GITHUB_OUTPUT}"
 
   sonarcloud-analysis:
     runs-on: ubuntu-latest
-    needs: [download-json, download-condition-checker]
+    needs: [produce-matrix-items]
     strategy:
       matrix:
-        config: ${{ fromJson(needs.download-json.outputs.filtered_config) }}
-#          - githubRepo: 'org1/repo1' # GitHub organization/repozitory name
-#            sonarProjectKey: 's_pk1' # SonarCloud project key
-#            enabled: true            # Whether the scheduled analysis of this repo is enabled
-#            requiresNodeJs: false    # Whether to setup Node.js and run `npm install`
-#            jdkVersion: 17           # JDK version if required or 0 otherwise
-#            analyze: 'default'       # Analysis method
+        config: ${{ fromJson(needs.produce-matrix-items.outputs.filtered_config) }}
     steps:
-      - name: Check skipping conditions
-        id: check_skipping_conditions
-        run: |
-          [[ "${{ needs.download-condition-checker.outputs.encoded_script }}" == "" ]] && echo "Empty script" && exit 1
-          base64 --decode <<<"${{ needs.download-condition-checker.outputs.encoded_script }}" | bash -s -- "${{ github.event_name }}" "${{ github.event.inputs.repo }}" "${{ matrix.config.enabled }}" "${{ matrix.config.githubRepo }}"
 
       - name: Checkout ${{ matrix.config.githubRepo }}
         uses: actions/checkout@v4
-        if: env.do_analysis == 'true'
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
           repository: '${{ matrix.config.githubRepo }}'
@@ -108,11 +82,11 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
-        if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
+        if: matrix.config.requiresNodeJs
 
       - name: Cache Node.js dependencies
         uses: actions/cache@v4
-        if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
+        if: matrix.config.requiresNodeJs
         with:
           path: ~/.npm
           key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-npm-${{ hashFiles('**/package-lock.json') }}
@@ -120,20 +94,20 @@ jobs:
             ${{ runner.os }}-${{ matrix.config.githubRepo }}-npm-
 
       - name: Run npm install
-        if: env.do_analysis == 'true' && matrix.config.requiresNodeJs
+        if: matrix.config.requiresNodeJs
         working-directory: '${{ matrix.config.githubRepo }}'
         run: find . -name package.json -exec bash -c '( cd "$(dirname "{}")" ; printf '%s\n' "----" "{}" ; npm install ; )' \;
 
       - name: Setup JDK
         uses: actions/setup-java@v4
-        if: env.do_analysis == 'true' && matrix.config.jdkVersion > 0
+        if: matrix.config.jdkVersion > 0
         with:
           java-version: ${{ matrix.config.jdkVersion }}
           distribution: 'temurin'
           
       - name: Cache SonarCloud packages
         uses: actions/cache@v4
-        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        if: matrix.config.analysisMethod == 'maven'
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-sonar-${{ hashFiles('**/sonar-project.properties') }}
@@ -141,7 +115,7 @@ jobs:
 
       - name: Cache Maven packages
         uses: actions/cache@v4
-        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        if: matrix.config.analysisMethod == 'maven'
         with:
           path: ~/.m2
           key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -149,7 +123,7 @@ jobs:
 
       - name: Cache Maven build outputs
         uses: actions/cache@v4
-        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        if: matrix.config.analysisMethod == 'maven'
         with:
           path: target
           key: ${{ runner.os }}-${{ matrix.config.githubRepo }}-maven-target-${{ hashFiles('**/pom.xml') }}
@@ -157,7 +131,7 @@ jobs:
             ${{ runner.os }}-${{ matrix.config.githubRepo }}-maven-target-
 
       - name: Build Maven and analyze
-        if: env.do_analysis == 'true' && matrix.config.analyze == 'maven'
+        if: matrix.config.analysisMethod == 'maven'
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         working-directory: '${{ matrix.config.githubRepo }}'
@@ -167,7 +141,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        if: env.do_analysis == 'true' && matrix.config.analyze == 'default'
+        if: matrix.config.analysisMethod == 'default'
         with:
           projectBaseDir: '${{ matrix.config.githubRepo }}'
           args: >
