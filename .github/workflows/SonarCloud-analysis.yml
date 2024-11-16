@@ -65,7 +65,7 @@ jobs:
           echo "${filtered_config}"
           echo "filtered_config=${filtered_config}" >>"${GITHUB_OUTPUT}"
 
-  sonarcloud-analysis:
+  sc-a:
     runs-on: ubuntu-latest
     needs: [produce-matrix-items]
     strategy:
