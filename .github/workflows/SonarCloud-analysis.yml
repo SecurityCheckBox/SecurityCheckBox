@@ -35,6 +35,12 @@ on:
           - LibreHealthIO/lh-ehr-laravel
           - openstreetmap/iD
           - openstreetmap/openstreetmap-website
+          - rolling-cz/cistky-minihra
+          - rolling-cz/cistky-obvineni
+          - rolling-cz/cistky-politiky
+          - rolling-cz/konec-dejin
+          - rolling-cz/moirai
+          - rolling-cz/orloj-2.0
           - SeanFranklin/hemaScorecard
           - trilbymedia/grav-plugin-flex-objects
           - zegkljan/scorer

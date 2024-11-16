@@ -177,6 +177,48 @@
     "jdkVersion": 0,
     "analyze": "default"
   }, {
+    "githubRepo": "rolling-cz/cistky-minihra",
+    "sonarProjectKey": "security-check-box_rolling-cistky-minihra",
+    "enabled": true,
+    "requiresNodeJs": true,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "rolling-cz/cistky-obvineni",
+    "sonarProjectKey": "security-check-box_rolling-cistky-obvineni",
+    "enabled": true,
+    "requiresNodeJs": true,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "rolling-cz/cistky-politiky",
+    "sonarProjectKey": "security-check-box_rolling-cistky-politiky",
+    "enabled": true,
+    "requiresNodeJs": true,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "rolling-cz/konec-dejin",
+    "sonarProjectKey": "security-check-box_rolling-konec-dejin",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
+    "githubRepo": "rolling-cz/moirai",
+    "sonarProjectKey": "security-check-box_rolling-moirai",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 11,
+    "analyze": "maven"
+  }, {
+    "githubRepo": "rolling-cz/orloj-2.0",
+    "sonarProjectKey": "security-check-box_rolling-orloj-2",
+    "enabled": true,
+    "requiresNodeJs": false,
+    "jdkVersion": 0,
+    "analyze": "default"
+  }, {
     "githubRepo": "SeanFranklin/hemaScorecard",
     "sonarProjectKey": "security-check-box_hema-score-card",
     "enabled": true,
