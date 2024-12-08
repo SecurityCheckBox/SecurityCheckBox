@@ -43,6 +43,7 @@ on:
           - rolling-cz/orloj-2.0
           - SeanFranklin/hemaScorecard
           - trilbymedia/grav-plugin-flex-objects
+          - windirstat/windirstat
           - zegkljan/scorer
           - zegkljan/videoreferee
   schedule:  # On a schedule - UTC

@@ -13,6 +13,7 @@ function List_Items() {
 Applifting           Humansis                      true      false     0        default   TODO: gradle (kotlin)
 cortezaproject       corteza                       true      true      0        default
 cortezaproject       corteza-server-corredor       true      true      0        default
+#_crossmasters       waaila                        false     false     0        default   Repo not in use anymore
 getgrav              grav                          true      false     0        default
 getgrav              grav-plugin-admin             true      false     0        default
 getgrav              grav-plugin-editor-buttons    true      false     0        default
@@ -43,6 +44,7 @@ rolling-cz           moirai                        true      false     11       
 rolling-cz           orloj-2.0                     true      false     0        default
 SeanFranklin         hemaScorecard                 true      false     0        default
 trilbymedia          grav-plugin-flex-objects      true      false     0        default
+windirstat           windirstat                    true      false     0        default   TODO: C/C++
 zegkljan             scorer                        true      true      0        default
 zegkljan             videoreferee                  true      false     0        default   TODO: gradle (kotlin)
 EOF
