@@ -7,49 +7,49 @@ shift
 
 function List_Items() {
   cat <<EOF | grep -v '^#'
-#                    #                             schedule  requires  JDK      analysis  #
-#_GitHub_owner_name  GitHub_repo_name              enabled   Node.js   version  method    [comment]
-#------------------  ----------------------------  --------  --------  -------  --------  ---------
-Applifting           Humansis                      true      false     0        default   TODO: gradle (kotlin)
-cortezaproject       corteza                       true      true      0        default
-cortezaproject       corteza-server-corredor       true      true      0        default
-#_crossmasters       waaila                        false     false     0        default   Repo not in use anymore
-getgrav              grav                          true      false     0        default
-getgrav              grav-plugin-admin             true      false     0        default
-getgrav              grav-plugin-editor-buttons    true      false     0        default
-getgrav              grav-plugin-email             true      false     0        default
-getgrav              grav-plugin-error             true      false     0        default
-getgrav              grav-plugin-featherlight      true      false     0        default
-getgrav              grav-plugin-form              true      false     0        default
-getgrav              grav-plugin-langswitcher      true      false     0        default
-getgrav              grav-plugin-login             true      false     0        default
-getgrav              grav-plugin-markdown-notices  true      false     0        default
-getgrav              grav-plugin-problems          true      false     0        default
-getgrav              grav-plugin-youtube           true      false     0        default
-Gnucash              gnucash                       true      false     0        default   TODO: C/C++
-hibbitts-design      grav-plugin-external-links    true      false     0        default
-intiface             intiface-central              true      false     0        default   TODO: Rust
-intiface             intiface-engine               true      false     0        default   TODO: Rust
-intiface             intiface-game-haptics-router  true      false     0        default   TODO: .NET
-kalkulacka-one       kalkulacka                    true      true      0        default
-KohoVolit            Mandaty.cz                    true      true      0        default
-KohoVolit            NapisteJim                    true      true      0        default
-KohoVolit            partmonitor.hu                true      true      0        default
-LibreHealthIO        lh-ehr                        true      false     0        default
-LibreHealthIO        lh-ehr-laravel                true      true      0        default
-openstreetmap        iD                            true      true      0        default
-openstreetmap        openstreetmap-website         true      false     0        default
-rolling-cz           cistky-minihra                true      true      0        default
-rolling-cz           cistky-obvineni               true      true      0        default
-rolling-cz           cistky-politiky               true      true      0        default
-rolling-cz           konec-dejin                   true      false     0        default
-rolling-cz           moirai                        true      false     11       maven
-rolling-cz           orloj-2.0                     true      false     0        default
-SeanFranklin         hemaScorecard                 true      false     0        default
-trilbymedia          grav-plugin-flex-objects      true      false     0        default
-windirstat           windirstat                    true      false     0        default   TODO: C/C++
-zegkljan             scorer                        true      true      0        default
-zegkljan             videoreferee                  true      false     0        default   TODO: gradle (kotlin)
+#                    #                             schedule  requires  JDK      Rust                            analysis  #
+#_GitHub_owner_name  GitHub_repo_name              enabled   Node.js   version  source                          method    [comment]
+#------------------  ----------------------------  --------  --------  -------  ------------------------------  --------  ---------
+Applifting           Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
+cortezaproject       corteza                       true      true      0        -                               default
+cortezaproject       corteza-server-corredor       true      true      0        -                               default
+#_crossmasters       waaila                        false     false     0        -                               default   Repo not in use anymore
+getgrav              grav                          true      false     0        -                               default
+getgrav              grav-plugin-admin             true      false     0        -                               default
+getgrav              grav-plugin-editor-buttons    true      false     0        -                               default
+getgrav              grav-plugin-email             true      false     0        -                               default
+getgrav              grav-plugin-error             true      false     0        -                               default
+getgrav              grav-plugin-featherlight      true      false     0        -                               default
+getgrav              grav-plugin-form              true      false     0        -                               default
+getgrav              grav-plugin-langswitcher      true      false     0        -                               default
+getgrav              grav-plugin-login             true      false     0        -                               default
+getgrav              grav-plugin-markdown-notices  true      false     0        -                               default
+getgrav              grav-plugin-problems          true      false     0        -                               default
+getgrav              grav-plugin-youtube           true      false     0        -                               default
+Gnucash              gnucash                       true      false     0        -                               default   TODO: C/C++
+hibbitts-design      grav-plugin-external-links    true      false     0        -                               default
+intiface             intiface-central              true      false     0        intiface-engine-flutter-bridge  default   TODO: Rust
+intiface             intiface-engine               true      false     0        .                               default   TODO: Rust
+intiface             intiface-game-haptics-router  true      false     0        -                               default   TODO: .NET
+kalkulacka-one       kalkulacka                    true      true      0        -                               default
+KohoVolit            Mandaty.cz                    true      true      0        -                               default
+KohoVolit            NapisteJim                    true      true      0        -                               default
+KohoVolit            partmonitor.hu                true      true      0        -                               default
+LibreHealthIO        lh-ehr                        true      false     0        -                               default
+LibreHealthIO        lh-ehr-laravel                true      true      0        -                               default
+openstreetmap        iD                            true      true      0        -                               default
+openstreetmap        openstreetmap-website         true      false     0        -                               default
+rolling-cz           cistky-minihra                true      true      0        -                               default
+rolling-cz           cistky-obvineni               true      true      0        -                               default
+rolling-cz           cistky-politiky               true      true      0        -                               default
+rolling-cz           konec-dejin                   true      false     0        -                               default
+rolling-cz           moirai                        true      false     11       -                               maven
+rolling-cz           orloj-2.0                     true      false     0        -                               default
+SeanFranklin         hemaScorecard                 true      false     0        -                               default
+trilbymedia          grav-plugin-flex-objects      true      false     0        -                               default
+windirstat           windirstat                    true      false     0        -                               default   TODO: C/C++
+zegkljan             scorer                        true      true      0        -                               default
+zegkljan             videoreferee                  true      false     0        -                               default   TODO: gradle (kotlin)
 EOF
 }
 
@@ -67,6 +67,13 @@ function Print_JSON_Item() {
   shift
   local jdk_version="${1}"
   shift
+  local rust_source="${1}"
+  case "${rust_source}" in
+    '-') ;;
+    '.')  rust_source="${repo_owner}/${repo_name}" ;;
+    *)    rust_source="${repo_owner}/${repo_name}/${rust_source}" ;;
+  esac
+  shift
   local analysis_method="${1}"
   shift
 
@@ -76,6 +83,7 @@ function Print_JSON_Item() {
     "sonarProjectKey": "security-check-box_${repo_owner}_${repo_name}",
     "requiresNodeJs": ${node_js},
     "jdkVersion": ${jdk_version},
+    "rustSource": "${rust_source}",
     "analysisMethod": "${analysis_method}"
   }
 EOF
@@ -83,9 +91,9 @@ EOF
 
 echo "["
 separator=""
-List_Items | while read repo_owner repo_name schedule_enabled node_js jdk_version analysis_method comment; do
+List_Items | while read repo_owner repo_name schedule_enabled node_js jdk_version rust analysis_method comment; do
   repo_full="${repo_owner}/${repo_name}"
-  fields=("${repo_owner}" "${repo_name}" "${node_js}" "${jdk_version}" "${analysis_method}")
+  fields=("${repo_owner}" "${repo_name}" "${node_js}" "${jdk_version}" "${rust}" "${analysis_method}")
 
   case "${event_name}" in 
 
