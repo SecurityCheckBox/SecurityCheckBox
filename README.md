@@ -13,7 +13,7 @@ It helps preventing bugs and security issues.
 
 It is pretty straightforward - just register in SonarCloud and follow the prompts. 
 There are also tons of tutorials to help you.
-Fit example [this one](https://docs.sonarsource.com/sonarcloud/getting-started/github/) and [this one](https://www.sonarsource.com/learn/integrating-sonarcloud-with-github/)
+For example [this one](https://docs.sonarsource.com/sonarcloud/getting-started/github/) and [this one](https://www.sonarsource.com/learn/integrating-sonarcloud-with-github/)
 
 Very useful is the option to integrate SonarCloud code quality check on pull requests.
 That way, you can reject pull requests with detected problems.
