@@ -27,6 +27,9 @@ on:
           - getgrav/grav-plugin-youtube
           - Gnucash/gnucash
           - hibbitts-design/grav-plugin-external-links
+          - intiface/intiface-central
+          - intiface/intiface-engine
+          - intiface/intiface-game-haptics-router
           - kalkulacka-one/kalkulacka
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim

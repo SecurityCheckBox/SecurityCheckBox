@@ -28,6 +28,9 @@ getgrav              grav-plugin-problems          true      false     0        
 getgrav              grav-plugin-youtube           true      false     0        default
 Gnucash              gnucash                       true      false     0        default   TODO: C/C++
 hibbitts-design      grav-plugin-external-links    true      false     0        default
+intiface             intiface-central              true      false     0        default   TODO: Rust
+intiface             intiface-engine               true      false     0        default   TODO: Rust
+intiface             intiface-game-haptics-router  true      false     0        default   TODO: .NET
 kalkulacka-one       kalkulacka                    true      true      0        default
 KohoVolit            Mandaty.cz                    true      true      0        default
 KohoVolit            NapisteJim                    true      true      0        default
