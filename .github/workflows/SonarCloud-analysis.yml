@@ -11,6 +11,7 @@ on:
         options:
           - '(all)'
           - Applifting/Humansis
+          - collective/icalendar
           - cortezaproject/corteza
           - cortezaproject/corteza-server-corredor
           - getgrav/grav
@@ -30,6 +31,7 @@ on:
           - intiface/intiface-central
           - intiface/intiface-engine
           - intiface/intiface-game-haptics-router
+          - jazzband/icalevents
           - kalkulacka-one/kalkulacka
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim

@@ -11,6 +11,7 @@ function List_Items() {
 #_GitHub_owner_name  GitHub_repo_name              enabled   Node.js   version  source                          method    [comment]
 #------------------  ----------------------------  --------  --------  -------  ------------------------------  --------  ---------
 Applifting           Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
+collective           icalendar                     true      true      0        -                               default
 cortezaproject       corteza                       true      true      0        -                               default
 cortezaproject       corteza-server-corredor       true      true      0        -                               default
 #_crossmasters       waaila                        false     false     0        -                               default   Repo not in use anymore
@@ -31,6 +32,7 @@ hibbitts-design      grav-plugin-external-links    true      false     0        
 intiface             intiface-central              true      false     0        intiface-engine-flutter-bridge  default   TODO: Rust
 intiface             intiface-engine               true      false     0        .                               default   TODO: Rust
 intiface             intiface-game-haptics-router  true      false     0        -                               default   TODO: .NET
+jazzband             icalevents                    true      false     0        -                               default
 kalkulacka-one       kalkulacka                    true      true      0        -                               default
 KohoVolit            Mandaty.cz                    true      true      0        -                               default
 KohoVolit            NapisteJim                    true      true      0        -                               default
