@@ -39,6 +39,7 @@ KohoVolit            NapisteJim                    true      true      0        
 KohoVolit            partmonitor.hu                true      true      0        -                               default
 LibreHealthIO        lh-ehr                        true      false     0        -                               default
 LibreHealthIO        lh-ehr-laravel                true      true      0        -                               default
+metlo-labs           csp-report-listener           true      false     0        .                               default   TODO: Rust
 openstreetmap        iD                            true      true      0        -                               default
 openstreetmap        openstreetmap-website         true      false     0        -                               default
 rolling-cz           cistky-minihra                true      true      0        -                               default

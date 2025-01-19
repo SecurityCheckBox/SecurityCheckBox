@@ -38,6 +38,7 @@ on:
           - KohoVolit/partmonitor.hu
           - LibreHealthIO/lh-ehr
           - LibreHealthIO/lh-ehr-laravel
+          - metlo-labs/csp-report-listener
           - openstreetmap/iD
           - openstreetmap/openstreetmap-website
           - rolling-cz/cistky-minihra
