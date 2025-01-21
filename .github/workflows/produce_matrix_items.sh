@@ -13,6 +13,7 @@ function List_Items() {
 Applifting           Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
 collective           icalendar                     true      true      0        -                               default
 cortezaproject       corteza                       true      true      0        -                               default
+cortezaproject       corteza-docs                  true      true      0        -                               default
 cortezaproject       corteza-server-corredor       true      true      0        -                               default
 #_crossmasters       waaila                        false     false     0        -                               default   Repo not in use anymore
 getgrav              grav                          true      false     0        -                               default

@@ -13,6 +13,7 @@ on:
           - Applifting/Humansis
           - collective/icalendar
           - cortezaproject/corteza
+          - cortezaproject/corteza-docs
           - cortezaproject/corteza-server-corredor
           - getgrav/grav
           - getgrav/grav-plugin-admin
