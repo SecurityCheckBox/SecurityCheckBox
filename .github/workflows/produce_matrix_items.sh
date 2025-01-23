@@ -50,6 +50,7 @@ rolling-cz           konec-dejin                   true      false     0        
 rolling-cz           moirai                        true      false     11       -                               maven
 rolling-cz           orloj-2.0                     true      false     0        -                               default
 SeanFranklin         hemaScorecard                 true      false     0        -                               default
+silinternational     saml-assertion-decryptor      true      false     0        -                               default
 trilbymedia          grav-plugin-flex-objects      true      false     0        -                               default
 windirstat           windirstat                    true      false     0        -                               default   TODO: C/C++
 zegkljan             scorer                        true      true      0        -                               default

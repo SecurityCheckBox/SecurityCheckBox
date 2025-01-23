@@ -49,6 +49,7 @@ on:
           - rolling-cz/moirai
           - rolling-cz/orloj-2.0
           - SeanFranklin/hemaScorecard
+          - silinternational/saml-assertion-decryptor
           - trilbymedia/grav-plugin-flex-objects
           - windirstat/windirstat
           - zegkljan/scorer
