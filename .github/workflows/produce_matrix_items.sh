@@ -38,6 +38,7 @@ kalkulacka-one       kalkulacka                    true      true      0        
 KohoVolit            Mandaty.cz                    true      true      0        -                               default
 KohoVolit            NapisteJim                    true      true      0        -                               default
 KohoVolit            partmonitor.hu                true      true      0        -                               default
+lapo-luchini         asn1js                        true      true      0        -                               default
 LibreHealthIO        lh-ehr                        true      false     0        -                               default
 LibreHealthIO        lh-ehr-laravel                true      true      0        -                               default
 metlo-labs           csp-report-listener           true      false     0        .                               default   TODO: Rust
