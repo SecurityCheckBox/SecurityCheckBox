@@ -11,6 +11,10 @@ function List_Items() {
 #_GitHub_owner_name  GitHub_repo_name              enabled   Node.js   version  source                          method    [comment]
 #------------------  ----------------------------  --------  --------  -------  ------------------------------  --------  ---------
 Applifting           Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
+boardgameio          boardgame.io                  true      true      0        -                               default
+boardgameio          p2p                           true      true      0        -                               default
+boardgameio          redis-pubsub                  true      true      0        -                               default
+boardgameio          storage-cache                 true      true      0        -                               default
 Cherum               hema-club-finder              true      true      0        -                               default   TODO: multirepo
 Cherum               hema-club-finder-pub          true      true      0        -                               default
 Cherum               hema-ratings-analyser         true      false     0        -                               default

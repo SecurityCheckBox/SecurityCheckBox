@@ -11,6 +11,10 @@ on:
         options:
           - '(all)'
           - Applifting/Humansis
+          - boardgameio/boardgame.io
+          - boardgameio/p2p
+          - boardgameio/redis-pubsub
+          - boardgameio/storage-cache
           - Cherum/hema-club-finder
           - Cherum/hema-club-finder-pub
           - Cherum/hema-ratings-analyser
