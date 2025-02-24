@@ -11,6 +11,11 @@ function List_Items() {
 #_GitHub_owner_name  GitHub_repo_name              enabled   Node.js   version  source                          method    [comment]
 #------------------  ----------------------------  --------  --------  -------  ------------------------------  --------  ---------
 Applifting           Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
+Cherum               hema-club-finder              true      true      0        -                               default   TODO: multirepo
+Cherum               hema-club-finder-pub          true      true      0        -                               default
+Cherum               hema-ratings-analyser         true      false     0        -                               default
+Cherum               hema-tournament-dashboard     true      true      0        -                               default
+Cherum               tournament_buzzer             true      false     17       -                               default   TODO: gradle (kotlin)
 collective           icalendar                     true      true      0        -                               default
 cortezaproject       corteza                       true      true      0        -                               default
 cortezaproject       corteza-docs                  true      true      0        -                               default
@@ -52,6 +57,7 @@ rolling-cz           moirai                        true      false     11       
 rolling-cz           orloj-2.0                     true      false     0        -                               default
 SeanFranklin         hemaScorecard                 true      false     0        -                               default
 silinternational     saml-assertion-decryptor      true      false     0        -                               default
+SPQRBrutus           hemaratings_bot               true      false     0        -                               default
 trilbymedia          grav-plugin-flex-objects      true      false     0        -                               default
 windirstat           windirstat                    true      false     0        -                               default   TODO: C/C++
 zegkljan             scorer                        true      true      0        -                               default

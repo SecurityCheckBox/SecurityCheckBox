@@ -11,6 +11,11 @@ on:
         options:
           - '(all)'
           - Applifting/Humansis
+          - Cherum/hema-club-finder
+          - Cherum/hema-club-finder-pub
+          - Cherum/hema-ratings-analyser
+          - Cherum/hema-tournament-dashboard
+          - Cherum/tournament_buzzer
           - collective/icalendar
           - cortezaproject/corteza
           - cortezaproject/corteza-docs
@@ -51,6 +56,7 @@ on:
           - rolling-cz/orloj-2.0
           - SeanFranklin/hemaScorecard
           - silinternational/saml-assertion-decryptor
+          - SPQRBrutus/hemaratings_bot
           - trilbymedia/grav-plugin-flex-objects
           - windirstat/windirstat
           - zegkljan/scorer
