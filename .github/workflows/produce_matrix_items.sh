@@ -7,69 +7,70 @@ shift
 
 function List_Items() {
   cat <<EOF | grep -v '^#'
-#                    #                             schedule  requires  JDK      Rust                            analysis  #
-#_GitHub_owner_name  GitHub_repo_name              enabled   Node.js   version  source                          method    [comment]
-#------------------  ----------------------------  --------  --------  -------  ------------------------------  --------  ---------
-Applifting           Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
-boardgameio          boardgame.io                  true      true      0        -                               default
-boardgameio          p2p                           true      true      0        -                               default
-boardgameio          redis-pubsub                  true      true      0        -                               default
-boardgameio          storage-cache                 true      true      0        -                               default
-Cherum               hema-club-finder              true      true      0        -                               default   TODO: multirepo
-Cherum               hema-club-finder-pub          true      true      0        -                               default
-Cherum               hema-ratings-analyser         true      false     0        -                               default
-Cherum               hema-tournament-dashboard     true      true      0        -                               default
-Cherum               tournament_buzzer             true      false     17       -                               default   TODO: gradle (kotlin)
-collective           icalendar                     true      true      0        -                               default
-cortezaproject       corteza                       true      true      0        -                               default
-cortezaproject       corteza-docs                  true      true      0        -                               default
-cortezaproject       corteza-server-corredor       true      true      0        -                               default
-#_crossmasters       waaila                        false     false     0        -                               default   Repo not in use anymore
-dbeaver              cloudbeaver                   true      true      0        -                               default
-dbeaver              dbeaver                       true      false     17       -                               default
-dbeaver              dbeaver-common                true      false     17       -                               default
-getgrav              grav                          true      false     0        -                               default
-getgrav              grav-plugin-admin             true      false     0        -                               default
-getgrav              grav-plugin-editor-buttons    true      false     0        -                               default
-getgrav              grav-plugin-email             true      false     0        -                               default
-getgrav              grav-plugin-error             true      false     0        -                               default
-getgrav              grav-plugin-featherlight      true      false     0        -                               default
-getgrav              grav-plugin-form              true      false     0        -                               default
-getgrav              grav-plugin-langswitcher      true      false     0        -                               default
-getgrav              grav-plugin-login             true      false     0        -                               default
-getgrav              grav-plugin-markdown-notices  true      false     0        -                               default
-getgrav              grav-plugin-problems          true      false     0        -                               default
-getgrav              grav-plugin-youtube           true      false     0        -                               default
-Gnucash              gnucash                       true      false     0        -                               default   TODO: C/C++
-hibbitts-design      grav-plugin-external-links    true      false     0        -                               default
-intiface             intiface-central              true      false     0        intiface-engine-flutter-bridge  default   TODO: Rust
-intiface             intiface-engine               true      false     0        .                               default   TODO: Rust
-intiface             intiface-game-haptics-router  true      false     0        -                               default   TODO: .NET
-jazzband             icalevents                    true      false     0        -                               default
-kalkulacka-one       kalkulacka                    true      true      0        -                               default
-KohoVolit            Mandaty.cz                    true      true      0        -                               default
-KohoVolit            NapisteJim                    true      true      0        -                               default
-KohoVolit            partmonitor.hu                true      true      0        -                               default
-lapo-luchini         asn1js                        true      true      0        -                               default
-LibreHealthIO        lh-ehr                        true      false     0        -                               default
-LibreHealthIO        lh-ehr-laravel                true      true      0        -                               default
-metlo-labs           csp-report-listener           true      false     0        .                               default   TODO: Rust
-openstreetmap        iD                            true      true      0        -                               default
-openstreetmap        openstreetmap-website         true      false     0        -                               default
-rolling-cz           cistky-minihra                true      true      0        -                               default
-rolling-cz           cistky-obvineni               true      true      0        -                               default
-rolling-cz           cistky-politiky               true      true      0        -                               default
-rolling-cz           konec-dejin                   true      false     0        -                               default
-rolling-cz           moirai                        true      false     11       -                               maven
-rolling-cz           orloj-2.0                     true      false     0        -                               default
-SeanFranklin         hemaScorecard                 true      false     0        -                               default
-silinternational     saml-assertion-decryptor      true      false     0        -                               default
-SPQRBrutus           hemaratings_bot               true      false     0        -                               default
-trilbymedia          grav-plugin-flex-objects      true      false     0        -                               default
-vrana                adminer                       true      false     0        -                               default
-windirstat           windirstat                    true      false     0        -                               default   TODO: C/C++
-zegkljan             scorer                        true      true      0        -                               default
-zegkljan             videoreferee                  true      false     0        -                               default   TODO: gradle (kotlin)
+#                        #                             schedule  requires  JDK      Rust                            analysis  #
+#_GitHub_owner_name      GitHub_repo_name              enabled   Node.js   version  source                          method    [comment]
+#------------------      ----------------------------  --------  --------  -------  ------------------------------  --------  ---------
+Applifting               Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
+boardgameio              boardgame.io                  true      true      0        -                               default
+boardgameio              p2p                           true      true      0        -                               default
+boardgameio              redis-pubsub                  true      true      0        -                               default
+boardgameio              storage-cache                 true      true      0        -                               default
+Cherum                   hema-club-finder              true      true      0        -                               default   TODO: multirepo
+Cherum                   hema-club-finder-pub          true      true      0        -                               default
+Cherum                   hema-ratings-analyser         true      false     0        -                               default
+Cherum                   hema-tournament-dashboard     true      true      0        -                               default
+Cherum                   tournament_buzzer             true      false     17       -                               default   TODO: gradle (kotlin)
+collective               icalendar                     true      true      0        -                               default
+cortezaproject           corteza                       true      true      0        -                               default
+cortezaproject           corteza-docs                  true      true      0        -                               default
+cortezaproject           corteza-server-corredor       true      true      0        -                               default
+#_crossmasters           waaila                        false     false     0        -                               default   Repo not in use anymore
+dbeaver                  cloudbeaver                   true      true      0        -                               default
+dbeaver                  dbeaver                       true      false     17       -                               default
+dbeaver                  dbeaver-common                true      false     17       -                               default
+getgrav                  grav                          true      false     0        -                               default
+getgrav                  grav-plugin-admin             true      false     0        -                               default
+getgrav                  grav-plugin-editor-buttons    true      false     0        -                               default
+getgrav                  grav-plugin-email             true      false     0        -                               default
+getgrav                  grav-plugin-error             true      false     0        -                               default
+getgrav                  grav-plugin-featherlight      true      false     0        -                               default
+getgrav                  grav-plugin-form              true      false     0        -                               default
+getgrav                  grav-plugin-langswitcher      true      false     0        -                               default
+getgrav                  grav-plugin-login             true      false     0        -                               default
+getgrav                  grav-plugin-markdown-notices  true      false     0        -                               default
+getgrav                  grav-plugin-problems          true      false     0        -                               default
+getgrav                  grav-plugin-youtube           true      false     0        -                               default
+Gnucash                  gnucash                       true      false     0        -                               default   TODO: C/C++
+hibbitts-design          grav-plugin-external-links    true      false     0        -                               default
+intiface                 intiface-central              true      false     0        intiface-engine-flutter-bridge  default   TODO: Rust
+intiface                 intiface-engine               true      false     0        .                               default   TODO: Rust
+intiface                 intiface-game-haptics-router  true      false     0        -                               default   TODO: .NET
+jazzband                 icalevents                    true      false     0        -                               default
+kalkulacka-one           kalkulacka                    true      true      0        -                               default
+KohoVolit                Mandaty.cz                    true      true      0        -                               default
+KohoVolit                NapisteJim                    true      true      0        -                               default
+KohoVolit                partmonitor.hu                true      true      0        -                               default
+kurzgesagt-in-a-nutshell birdbot                       true      true      0        -                               default
+lapo-luchini             asn1js                        true      true      0        -                               default
+LibreHealthIO            lh-ehr                        true      false     0        -                               default
+LibreHealthIO            lh-ehr-laravel                true      true      0        -                               default
+metlo-labs               csp-report-listener           true      false     0        .                               default   TODO: Rust
+openstreetmap            iD                            true      true      0        -                               default
+openstreetmap            openstreetmap-website         true      false     0        -                               default
+rolling-cz               cistky-minihra                true      true      0        -                               default
+rolling-cz               cistky-obvineni               true      true      0        -                               default
+rolling-cz               cistky-politiky               true      true      0        -                               default
+rolling-cz               konec-dejin                   true      false     0        -                               default
+rolling-cz               moirai                        true      false     11       -                               maven
+rolling-cz               orloj-2.0                     true      false     0        -                               default
+SeanFranklin             hemaScorecard                 true      false     0        -                               default
+silinternational         saml-assertion-decryptor      true      false     0        -                               default
+SPQRBrutus               hemaratings_bot               true      false     0        -                               default
+trilbymedia              grav-plugin-flex-objects      true      false     0        -                               default
+vrana                    adminer                       true      false     0        -                               default
+windirstat               windirstat                    true      false     0        -                               default   TODO: C/C++
+zegkljan                 scorer                        true      true      0        -                               default
+zegkljan                 videoreferee                  true      false     0        -                               default   TODO: gradle (kotlin)
 EOF
 }
 

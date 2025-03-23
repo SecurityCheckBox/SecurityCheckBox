@@ -49,6 +49,7 @@ on:
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim
           - KohoVolit/partmonitor.hu
+          - kurzgesagt-in-a-nutshell birdbot
           - lapo-luchini/asn1js
           - LibreHealthIO/lh-ehr
           - LibreHealthIO/lh-ehr-laravel
