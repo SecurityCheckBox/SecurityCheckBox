@@ -66,6 +66,7 @@ SeanFranklin         hemaScorecard                 true      false     0        
 silinternational     saml-assertion-decryptor      true      false     0        -                               default
 SPQRBrutus           hemaratings_bot               true      false     0        -                               default
 trilbymedia          grav-plugin-flex-objects      true      false     0        -                               default
+vrana                adminer                       true      false     0        -                               default
 windirstat           windirstat                    true      false     0        -                               default   TODO: C/C++
 zegkljan             scorer                        true      true      0        -                               default
 zegkljan             videoreferee                  true      false     0        -                               default   TODO: gradle (kotlin)

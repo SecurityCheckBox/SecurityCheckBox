@@ -65,6 +65,7 @@ on:
           - silinternational/saml-assertion-decryptor
           - SPQRBrutus/hemaratings_bot
           - trilbymedia/grav-plugin-flex-objects
+          - vrana/adminer
           - windirstat/windirstat
           - zegkljan/scorer
           - zegkljan/videoreferee
