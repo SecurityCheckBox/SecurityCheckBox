@@ -24,6 +24,9 @@ on:
           - cortezaproject/corteza
           - cortezaproject/corteza-docs
           - cortezaproject/corteza-server-corredor
+          - dbeaver/cloudbeaver
+          - dbeaver/dbeaver
+          - dbeaver/dbeaver-common
           - getgrav/grav
           - getgrav/grav-plugin-admin
           - getgrav/grav-plugin-editor-buttons
