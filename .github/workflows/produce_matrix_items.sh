@@ -13,7 +13,7 @@ function List_Items() {
 Applifting               Humansis                      true      false     0        -                               default   TODO: gradle (kotlin)
 boardgameio              boardgame.io                  true      true      0        -                               default
 boardgameio              p2p                           true      true      0        -                               default
-boardgameio              redis-pubsub                  true      true      0        -                               default
+#_boardgameio            redis-pubsub                  true      true      0        -                               default   TODO: https://github.com/SecurityCheckBox/SecurityCheckBox/actions/runs/14770090270/job/41468634852#step:5:197
 boardgameio              storage-cache                 true      true      0        -                               default
 Cherum                   hema-club-finder              true      true      0        -                               default   TODO: multirepo
 Cherum                   hema-club-finder-pub          true      true      0        -                               default
@@ -25,9 +25,9 @@ cortezaproject           corteza                       true      true      0    
 cortezaproject           corteza-docs                  true      true      0        -                               default
 cortezaproject           corteza-server-corredor       true      true      0        -                               default
 #_crossmasters           waaila                        false     false     0        -                               default   Repo not in use anymore
-dbeaver                  cloudbeaver                   true      true      0        -                               default
-dbeaver                  dbeaver                       true      false     17       -                               default
-#_dbeaver                dbeaver-common                true      false     17       -                               default
+#_dbeaver                cloudbeaver                   true      true      0        -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
+#_dbeaver                dbeaver                       true      false     17       -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
+#_dbeaver                dbeaver-common                true      false     17       -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
 getgrav                  grav                          true      false     0        -                               default
 getgrav                  grav-plugin-admin             true      false     0        -                               default
 getgrav                  grav-plugin-editor-buttons    true      false     0        -                               default
@@ -54,7 +54,7 @@ kurzgesagt-in-a-nutshell birdbot                       true      true      0    
 lapo-luchini             asn1js                        true      true      0        -                               default
 LibreHealthIO            lh-ehr                        true      false     0        -                               default
 LibreHealthIO            lh-ehr-laravel                true      true      0        -                               default
-metlo-labs               csp-report-listener           true      false     0        .                               default   TODO: Rust
+metlo-labs               csp-report-listener           true      false     0        .                               default   TODO: Rust; could not find Cargo.toml in /home/runner/work/SecurityCheckBox/SecurityCheckBox/metlo-labs/csp-report-listener or any parent directory
 openstreetmap            iD                            true      true      0        -                               default
 openstreetmap            openstreetmap-website         true      false     0        -                               default
 rolling-cz               cistky-minihra                true      true      0        -                               default
