@@ -27,7 +27,7 @@ cortezaproject           corteza-server-corredor       true      true      0    
 #_crossmasters           waaila                        false     false     0        -                               default   Repo not in use anymore
 dbeaver                  cloudbeaver                   true      true      0        -                               default
 dbeaver                  dbeaver                       true      false     17       -                               default
-dbeaver                  dbeaver-common                true      false     17       -                               default
+#_dbeaver                dbeaver-common                true      false     17       -                               default
 getgrav                  grav                          true      false     0        -                               default
 getgrav                  grav-plugin-admin             true      false     0        -                               default
 getgrav                  grav-plugin-editor-buttons    true      false     0        -                               default
