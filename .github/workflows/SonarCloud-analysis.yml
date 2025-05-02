@@ -64,6 +64,7 @@ on:
           - SeanFranklin/hemaScorecard
           - silinternational/saml-assertion-decryptor
           - SPQRBrutus/hemaratings_bot
+          - sumatrapdfreader/sumatrapdf
           - trilbymedia/grav-plugin-flex-objects
           - vrana/adminer
           - windirstat/windirstat

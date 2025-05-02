@@ -66,6 +66,7 @@ rolling-cz               orloj-2.0                     true      false     0    
 SeanFranklin             hemaScorecard                 true      false     0        -                               default
 silinternational         saml-assertion-decryptor      true      false     0        -                               default
 SPQRBrutus               hemaratings_bot               true      false     0        -                               default
+sumatrapdfreader         sumatrapdf                    true      false     0        -                               default   TODO: C/C++
 trilbymedia              grav-plugin-flex-objects      true      false     0        -                               default
 vrana                    adminer                       true      false     0        -                               default
 windirstat               windirstat                    true      false     0        -                               default   TODO: C/C++
