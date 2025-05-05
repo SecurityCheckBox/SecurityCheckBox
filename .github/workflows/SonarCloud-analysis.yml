@@ -63,6 +63,8 @@ on:
           - LibreHealthIO/lh-ehr
           - LibreHealthIO/lh-ehr-laravel
           - metlo-labs/csp-report-listener
+          - opendatalabcz/certificate-watcher
+          - opendatalabcz/transparent-accounts
           - openstreetmap/iD
           - openstreetmap/openstreetmap-website
           - rolling-cz/cistky-minihra
