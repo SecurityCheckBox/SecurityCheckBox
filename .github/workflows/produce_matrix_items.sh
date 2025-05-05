@@ -42,6 +42,13 @@ getgrav                  grav-plugin-problems          true      false     0    
 getgrav                  grav-plugin-youtube           true      false     0        -                               default
 Gnucash                  gnucash                       true      false     0        -                               default   TODO: C/C++
 hibbitts-design          grav-plugin-external-links    true      false     0        -                               default
+HlidacStatu              API                           true      false     0        -                               default
+HlidacStatu              Datasety                      true      false     0        -                               default
+HlidacStatu              Hlidac-Statu                  true      false     0        -                               default
+HlidacStatu              OcrMinion                     true      false     0        -                               default
+HlidacStatu              verejne-zakazky               true      false     0        -                               default
+HlidacStatu              Volicsky-Prukaz               true      false     0        -                               default
+HlidacStatu              Wordpress-plugin              true      false     0        -                               default
 indently                 beginner_python_projects      true      false     0        -                               default
 indently                 five_decorators               true      false     0        -                               default
 indently                 python_projects               true      false     0        -                               default

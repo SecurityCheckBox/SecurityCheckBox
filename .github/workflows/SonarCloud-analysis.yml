@@ -40,6 +40,13 @@ on:
           - getgrav/grav-plugin-youtube
           - Gnucash/gnucash
           - hibbitts-design/grav-plugin-external-links
+          - HlidacStatu/API
+          - HlidacStatu/Datasety
+          - HlidacStatu/Hlidac-Statu
+          - HlidacStatu/OcrMinion
+          - HlidacStatu/verejne-zakazky
+          - HlidacStatu/Volicsky-Prukaz
+          - HlidacStatu/Wordpress-plugin
           - indently/beginner_python_projects
           - indently/five_decorators
           - indently/python_projects
