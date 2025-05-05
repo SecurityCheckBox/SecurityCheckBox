@@ -40,6 +40,9 @@ on:
           - getgrav/grav-plugin-youtube
           - Gnucash/gnucash
           - hibbitts-design/grav-plugin-external-links
+          - indently/beginner_python_projects
+          - indently/five_decorators
+          - indently/python_projects
           - intiface/intiface-central
           - intiface/intiface-engine
           - intiface/intiface-game-haptics-router
