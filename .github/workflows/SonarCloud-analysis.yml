@@ -75,6 +75,18 @@ on:
           - rolling-cz/orloj-2.0
           - SeanFranklin/hemaScorecard
           - silinternational/saml-assertion-decryptor
+          - skaut/crdm-modern
+          - skaut/poptavky
+          - skaut/shared-drive-mover
+          - skaut/skaut-google-drive-gallery
+          - skaut/Skautis
+          - skaut/skautis-integration
+          - skaut/skautis-py
+          - skaut/Skautske-hospodareni
+          - skaut/SRS
+          - skaut/srs-vstupenky
+          - skaut/wordpress-stubs
+          - skaut/wordpress-version-checker
           - SPQRBrutus/hemaratings_bot
           - sumatrapdfreader/sumatrapdf
           - trilbymedia/grav-plugin-flex-objects

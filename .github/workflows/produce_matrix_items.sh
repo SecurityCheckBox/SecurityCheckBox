@@ -76,7 +76,19 @@ rolling-cz               konec-dejin                   true      false     0    
 rolling-cz               moirai                        true      false     11       -                               maven
 rolling-cz               orloj-2.0                     true      false     0        -                               default
 SeanFranklin             hemaScorecard                 true      false     0        -                               default
-silinternational         saml-assertion-decryptor      true      false     0        -                               default
+silinternatonal          saml-assertion-decryptor      true      false     0        -                               default
+skaut                    crdm-modern                   true      false     0        -                               default
+skaut                    poptavky                      true      false     0        -                               default
+skaut                    shared-drive-mover            true      false     0        -                               default
+skaut                    skaut-google-drive-gallery    true      false     0        -                               default
+skaut                    Skautis                       true      false     0        -                               default
+skaut                    skautis-integration           true      false     0        -                               default
+skaut                    skautis-py                    true      false     0        -                               default
+skaut                    Skautske-hospodareni          true      false     0        -                               default
+skaut                    SRS                           true      false     0        -                               default
+skaut                    srs-vstupenky                 true      false     11       -                               default
+skaut                    wordpress-stubs               true      false     0        -                               default
+skaut                    wordpress-version-checker     true      false     0        -                               default
 SPQRBrutus               hemaratings_bot               true      false     0        -                               default
 sumatrapdfreader         sumatrapdf                    true      false     0        -                               default   TODO: C/C++
 trilbymedia              grav-plugin-flex-objects      true      false     0        -                               default
