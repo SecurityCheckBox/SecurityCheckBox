@@ -24,8 +24,17 @@ on:
           - cortezaproject/corteza
           - cortezaproject/corteza-docs
           - cortezaproject/corteza-server-corredor
-          - dbeaver/cloudbeaver
-          - dbeaver/dbeaver
+          - frappe/books
+          - frappe/charts
+          - frappe/crm
+          - frappe/drive
+          - frappe/erpnext
+          - frappe/frappe
+          - frappe/frappe_docker
+          - frappe/frappe-ui
+          - frappe/gantt
+          - frappe/helpdesk
+          - frappe/lms
           - getgrav/grav
           - getgrav/grav-plugin-admin
           - getgrav/grav-plugin-editor-buttons

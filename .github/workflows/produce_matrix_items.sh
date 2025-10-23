@@ -28,6 +28,17 @@ cortezaproject           corteza-server-corredor       true      true      0    
 #_dbeaver                cloudbeaver                   true      true      0        -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
 #_dbeaver                dbeaver                       true      false     17       -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
 #_dbeaver                dbeaver-common                true      false     17       -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
+frappe                   books                         true      true      0        -                               default
+frappe                   charts                        true      true      0        -                               default
+frappe                   crm                           true      true      0        -                               default
+frappe                   drive                         true      true      0        -                               default
+frappe                   erpnext                       true      true      0        -                               default
+frappe                   frappe                        true      true      0        -                               default
+frappe                   frappe_docker                 true      false     0        -                               default
+frappe                   frappe-ui                     true      true      0        -                               default
+frappe                   gantt                         true      true      0        -                               default
+frappe                   helpdesk                      true      true      0        -                               default
+frappe                   lms                           true      true      0        -                               default
 getgrav                  grav                          true      false     0        -                               default
 getgrav                  grav-plugin-admin             true      false     0        -                               default
 getgrav                  grav-plugin-editor-buttons    true      false     0        -                               default
