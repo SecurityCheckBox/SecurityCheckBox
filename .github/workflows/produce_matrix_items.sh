@@ -28,6 +28,7 @@ cortezaproject           corteza-server-corredor       true      true      0    
 #_dbeaver                cloudbeaver                   true      true      0        -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
 #_dbeaver                dbeaver                       true      false     17       -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
 #_dbeaver                dbeaver-common                true      false     17       -                               default   TODO: Your project contains .java files, please provide compiled classes with sonar.java.binaries property, or exclude them from the analysis with sonar.exclusions property.
+ekmungai                 python-accounting             true      false     0        -                               default
 frappe                   books                         true      true      0        -                               default
 frappe                   charts                        true      true      0        -                               default
 frappe                   crm                           true      true      0        -                               default
