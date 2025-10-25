@@ -24,6 +24,7 @@ on:
           - cortezaproject/corteza
           - cortezaproject/corteza-docs
           - cortezaproject/corteza-server-corredor
+          - ekmungai/python-accounting
           - frappe/books
           - frappe/charts
           - frappe/crm
