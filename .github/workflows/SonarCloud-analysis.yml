@@ -105,7 +105,7 @@ on:
           - zegkljan/scorer
           - zegkljan/videoreferee
   schedule:  # On a schedule - UTC
-    - cron: '0 10 * * 5'
+    - cron: '0 10 20 * *'
 
 jobs:
 
