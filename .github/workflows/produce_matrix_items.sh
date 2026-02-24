@@ -69,6 +69,7 @@ intiface                 intiface-engine               true      false     0    
 intiface                 intiface-game-haptics-router  true      false     0        -                               default   TODO: .NET
 jazzband                 icalevents                    true      false     0        -                               default
 kalkulacka-one           kalkulacka                    true      true      0        -                               default
+Kinovea                  Kinovea                       true      false     0        -                               default
 KohoVolit                Mandaty.cz                    true      true      0        -                               default
 KohoVolit                NapisteJim                    true      true      0        -                               default
 KohoVolit                partmonitor.hu                true      true      0        -                               default

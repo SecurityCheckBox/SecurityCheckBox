@@ -65,6 +65,7 @@ on:
           - intiface/intiface-game-haptics-router
           - jazzband/icalevents
           - kalkulacka-one/kalkulacka
+          - Kinovea/Kinovea
           - KohoVolit/Mandaty.cz
           - KohoVolit/NapisteJim
           - KohoVolit/partmonitor.hu
