@@ -74,6 +74,7 @@ on:
           - LibreHealthIO/lh-ehr
           - LibreHealthIO/lh-ehr-laravel
           - metlo-labs/csp-report-listener
+          - miroslavmyrha/accounting-app
           - opendatalabcz/certificate-watcher
           - opendatalabcz/transparent-accounts
           - openstreetmap/iD
