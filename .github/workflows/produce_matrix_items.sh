@@ -78,6 +78,7 @@ lapo-luchini             asn1js                        true      true      0    
 LibreHealthIO            lh-ehr                        true      false     0        -                               default
 LibreHealthIO            lh-ehr-laravel                true      true      0        -                               default
 metlo-labs               csp-report-listener           true      false     0        .                               default   TODO: Rust; could not find Cargo.toml in /home/runner/work/SecurityCheckBox/SecurityCheckBox/metlo-labs/csp-report-listener or any parent directory
+miroslavmyrha            accounting-app                true      true      0        -                               default
 opendatalabcz            certificate-watcher           true      false     0        .                               default
 opendatalabcz            transparent-accounts          true      false     0        .                               default
 openstreetmap            iD                            true      true      0        -                               default
